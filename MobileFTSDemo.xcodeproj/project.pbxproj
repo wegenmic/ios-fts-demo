@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E571B5A19E0A9F6009374D5 /* Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E571B5919E0A9F6009374D5 /* Ipad.storyboard */; };
+		0E571B9119E0AA69009374D5 /* Iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E571B9019E0AA69009374D5 /* Iphone.storyboard */; };
+		0E661F8719E06762004CB26C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661F8619E06762004CB26C /* main.m */; };
+		0E661F8A19E06762004CB26C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661F8919E06762004CB26C /* AppDelegate.m */; };
+		0E661F8D19E06762004CB26C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661F8C19E06762004CB26C /* MasterViewController.m */; };
+		0E661F9019E06762004CB26C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661F8F19E06762004CB26C /* DetailViewController.m */; };
+		0E661F9519E06762004CB26C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E661F9419E06762004CB26C /* Images.xcassets */; };
+		0E661F9819E06762004CB26C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E661F9619E06762004CB26C /* LaunchScreen.xib */; };
+		0E661FA419E06762004CB26C /* MobileFTSDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FA319E06762004CB26C /* MobileFTSDemoTests.m */; };
+		0E661FB819E07048004CB26C /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FB719E07048004CB26C /* Document.m */; };
+		0E661FE819E08266004CB26C /* FTSActionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FBD19E08266004CB26C /* FTSActionData.m */; };
+		0E661FE919E08266004CB26C /* FTSReadActionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FBF19E08266004CB26C /* FTSReadActionData.m */; };
+		0E661FEA19E08266004CB26C /* FTSWriteActionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FC119E08266004CB26C /* FTSWriteActionData.m */; };
+		0E661FEB19E08266004CB26C /* FTSAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FC319E08266004CB26C /* FTSAction.m */; };
+		0E661FEC19E08266004CB26C /* FTSFindDocumentAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FC619E08266004CB26C /* FTSFindDocumentAction.m */; };
+		0E661FED19E08266004CB26C /* FTSReadAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FC819E08266004CB26C /* FTSReadAction.m */; };
+		0E661FEE19E08266004CB26C /* FTSQueryPreprocessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FCB19E08266004CB26C /* FTSQueryPreprocessor.m */; };
+		0E661FEF19E08266004CB26C /* FTSContentExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FCF19E08266004CB26C /* FTSContentExtractor.m */; };
+		0E661FF019E08266004CB26C /* FTSDefaultContentExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FD119E08266004CB26C /* FTSDefaultContentExtractor.m */; };
+		0E661FF119E08266004CB26C /* FTSHtmlContentExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FD319E08266004CB26C /* FTSHtmlContentExtractor.m */; };
+		0E661FF219E08266004CB26C /* FTSJsonContentExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FD519E08266004CB26C /* FTSJsonContentExtractor.m */; };
+		0E661FF319E08266004CB26C /* FTSPdfContentExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FD719E08266004CB26C /* FTSPdfContentExtractor.m */; };
+		0E661FF419E08266004CB26C /* FTSXmlContentExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FD919E08266004CB26C /* FTSXmlContentExtractor.m */; };
+		0E661FF519E08266004CB26C /* PDFStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FDB19E08266004CB26C /* PDFStringParser.m */; };
+		0E661FF619E08266004CB26C /* FTSAddDocumentAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FDD19E08266004CB26C /* FTSAddDocumentAction.m */; };
+		0E661FF719E08266004CB26C /* FTSRemoveDocumentAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FDF19E08266004CB26C /* FTSRemoveDocumentAction.m */; };
+		0E661FF819E08266004CB26C /* FTSWriteAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FE119E08266004CB26C /* FTSWriteAction.m */; };
+		0E661FF919E08266004CB26C /* FTSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FE319E08266004CB26C /* FTSConfiguration.m */; };
+		0E661FFA19E08266004CB26C /* FTSDatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FE519E08266004CB26C /* FTSDatabaseHandler.m */; };
+		0E661FFB19E08266004CB26C /* FTSDocumentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FE719E08266004CB26C /* FTSDocumentHandler.m */; };
+		0E66200A19E08275004CB26C /* css_zen_garden.html in Resources */ = {isa = PBXBuildFile; fileRef = 0E661FFE19E08275004CB26C /* css_zen_garden.html */; };
+		0E66200B19E08275004CB26C /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200019E08275004CB26C /* sample.json */; };
+		0E66200C19E08275004CB26C /* example.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200219E08275004CB26C /* example.pdf */; };
+		0E66200D19E08275004CB26C /* cicero.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200419E08275004CB26C /* cicero.txt */; };
+		0E66200E19E08275004CB26C /* document.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200519E08275004CB26C /* document.txt */; };
+		0E66200F19E08275004CB26C /* kafka.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200619E08275004CB26C /* kafka.txt */; };
+		0E66201019E08275004CB26C /* pangram.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200719E08275004CB26C /* pangram.txt */; };
+		0E66201119E08275004CB26C /* werther.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200819E08275004CB26C /* werther.txt */; };
+		F5C29E1BD11A4173BB7B4ED1 /* libPods-MobileFTSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95CF76D8BFC4012B31CB51D /* libPods-MobileFTSDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E661F9E19E06762004CB26C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E661F7919E06762004CB26C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E661F8019E06762004CB26C;
+			remoteInfo = MobileFTSDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E571B5919E0A9F6009374D5 /* Ipad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ipad.storyboard; sourceTree = "<group>"; };
+		0E571B9019E0AA69009374D5 /* Iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Iphone.storyboard; sourceTree = "<group>"; };
+		0E661F8119E06762004CB26C /* MobileFTSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileFTSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E661F8519E06762004CB26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E661F8619E06762004CB26C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0E661F8819E06762004CB26C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0E661F8919E06762004CB26C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0E661F8B19E06762004CB26C /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		0E661F8C19E06762004CB26C /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		0E661F8E19E06762004CB26C /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		0E661F8F19E06762004CB26C /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		0E661F9419E06762004CB26C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0E661F9719E06762004CB26C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0E661F9D19E06762004CB26C /* MobileFTSDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileFTSDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E661FA219E06762004CB26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E661FA319E06762004CB26C /* MobileFTSDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileFTSDemoTests.m; sourceTree = "<group>"; };
+		0E661FB619E07048004CB26C /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		0E661FB719E07048004CB26C /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		0E661FBC19E08266004CB26C /* FTSActionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSActionData.h; sourceTree = "<group>"; };
+		0E661FBD19E08266004CB26C /* FTSActionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSActionData.m; sourceTree = "<group>"; };
+		0E661FBE19E08266004CB26C /* FTSReadActionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSReadActionData.h; sourceTree = "<group>"; };
+		0E661FBF19E08266004CB26C /* FTSReadActionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSReadActionData.m; sourceTree = "<group>"; };
+		0E661FC019E08266004CB26C /* FTSWriteActionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSWriteActionData.h; sourceTree = "<group>"; };
+		0E661FC119E08266004CB26C /* FTSWriteActionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSWriteActionData.m; sourceTree = "<group>"; };
+		0E661FC219E08266004CB26C /* FTSAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSAction.h; sourceTree = "<group>"; };
+		0E661FC319E08266004CB26C /* FTSAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSAction.m; sourceTree = "<group>"; };
+		0E661FC519E08266004CB26C /* FTSFindDocumentAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSFindDocumentAction.h; sourceTree = "<group>"; };
+		0E661FC619E08266004CB26C /* FTSFindDocumentAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSFindDocumentAction.m; sourceTree = "<group>"; };
+		0E661FC719E08266004CB26C /* FTSReadAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSReadAction.h; sourceTree = "<group>"; };
+		0E661FC819E08266004CB26C /* FTSReadAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSReadAction.m; sourceTree = "<group>"; };
+		0E661FCA19E08266004CB26C /* FTSQueryPreprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSQueryPreprocessor.h; sourceTree = "<group>"; };
+		0E661FCB19E08266004CB26C /* FTSQueryPreprocessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSQueryPreprocessor.m; sourceTree = "<group>"; };
+		0E661FCE19E08266004CB26C /* FTSContentExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSContentExtractor.h; sourceTree = "<group>"; };
+		0E661FCF19E08266004CB26C /* FTSContentExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSContentExtractor.m; sourceTree = "<group>"; };
+		0E661FD019E08266004CB26C /* FTSDefaultContentExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSDefaultContentExtractor.h; sourceTree = "<group>"; };
+		0E661FD119E08266004CB26C /* FTSDefaultContentExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSDefaultContentExtractor.m; sourceTree = "<group>"; };
+		0E661FD219E08266004CB26C /* FTSHtmlContentExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSHtmlContentExtractor.h; sourceTree = "<group>"; };
+		0E661FD319E08266004CB26C /* FTSHtmlContentExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSHtmlContentExtractor.m; sourceTree = "<group>"; };
+		0E661FD419E08266004CB26C /* FTSJsonContentExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSJsonContentExtractor.h; sourceTree = "<group>"; };
+		0E661FD519E08266004CB26C /* FTSJsonContentExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSJsonContentExtractor.m; sourceTree = "<group>"; };
+		0E661FD619E08266004CB26C /* FTSPdfContentExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSPdfContentExtractor.h; sourceTree = "<group>"; };
+		0E661FD719E08266004CB26C /* FTSPdfContentExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSPdfContentExtractor.m; sourceTree = "<group>"; };
+		0E661FD819E08266004CB26C /* FTSXmlContentExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSXmlContentExtractor.h; sourceTree = "<group>"; };
+		0E661FD919E08266004CB26C /* FTSXmlContentExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSXmlContentExtractor.m; sourceTree = "<group>"; };
+		0E661FDA19E08266004CB26C /* PDFStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFStringParser.h; sourceTree = "<group>"; };
+		0E661FDB19E08266004CB26C /* PDFStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFStringParser.m; sourceTree = "<group>"; };
+		0E661FDC19E08266004CB26C /* FTSAddDocumentAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSAddDocumentAction.h; sourceTree = "<group>"; };
+		0E661FDD19E08266004CB26C /* FTSAddDocumentAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSAddDocumentAction.m; sourceTree = "<group>"; };
+		0E661FDE19E08266004CB26C /* FTSRemoveDocumentAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSRemoveDocumentAction.h; sourceTree = "<group>"; };
+		0E661FDF19E08266004CB26C /* FTSRemoveDocumentAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSRemoveDocumentAction.m; sourceTree = "<group>"; };
+		0E661FE019E08266004CB26C /* FTSWriteAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSWriteAction.h; sourceTree = "<group>"; };
+		0E661FE119E08266004CB26C /* FTSWriteAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSWriteAction.m; sourceTree = "<group>"; };
+		0E661FE219E08266004CB26C /* FTSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSConfiguration.h; sourceTree = "<group>"; };
+		0E661FE319E08266004CB26C /* FTSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSConfiguration.m; sourceTree = "<group>"; };
+		0E661FE419E08266004CB26C /* FTSDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSDatabaseHandler.h; sourceTree = "<group>"; };
+		0E661FE519E08266004CB26C /* FTSDatabaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSDatabaseHandler.m; sourceTree = "<group>"; };
+		0E661FE619E08266004CB26C /* FTSDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSDocumentHandler.h; sourceTree = "<group>"; };
+		0E661FE719E08266004CB26C /* FTSDocumentHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSDocumentHandler.m; sourceTree = "<group>"; };
+		0E661FFE19E08275004CB26C /* css_zen_garden.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = css_zen_garden.html; sourceTree = "<group>"; };
+		0E66200019E08275004CB26C /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		0E66200219E08275004CB26C /* example.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = example.pdf; sourceTree = "<group>"; };
+		0E66200419E08275004CB26C /* cicero.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cicero.txt; sourceTree = "<group>"; };
+		0E66200519E08275004CB26C /* document.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = document.txt; sourceTree = "<group>"; };
+		0E66200619E08275004CB26C /* kafka.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kafka.txt; sourceTree = "<group>"; };
+		0E66200719E08275004CB26C /* pangram.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pangram.txt; sourceTree = "<group>"; };
+		0E66200819E08275004CB26C /* werther.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = werther.txt; sourceTree = "<group>"; };
+		484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFTSDemo.xcconfig"; path = "Pods/Pods-MobileFTSDemo.xcconfig"; sourceTree = "<group>"; };
+		B95CF76D8BFC4012B31CB51D /* libPods-MobileFTSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFTSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E661F7E19E06762004CB26C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C29E1BD11A4173BB7B4ED1 /* libPods-MobileFTSDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E661F9A19E06762004CB26C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E661F7819E06762004CB26C = {
+			isa = PBXGroup;
+			children = (
+				0E661F8319E06762004CB26C /* MobileFTSDemo */,
+				0E661FA019E06762004CB26C /* MobileFTSDemoTests */,
+				0E661F8219E06762004CB26C /* Products */,
+				484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */,
+				509C482C0DF644568D0F552E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0E661F8219E06762004CB26C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E661F8119E06762004CB26C /* MobileFTSDemo.app */,
+				0E661F9D19E06762004CB26C /* MobileFTSDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E661F8319E06762004CB26C /* MobileFTSDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FFC19E08275004CB26C /* SampleData */,
+				0E661FB919E08266004CB26C /* FTS */,
+				0E661F8819E06762004CB26C /* AppDelegate.h */,
+				0E661F8919E06762004CB26C /* AppDelegate.m */,
+				0E661F8B19E06762004CB26C /* MasterViewController.h */,
+				0E661F8C19E06762004CB26C /* MasterViewController.m */,
+				0E661F8E19E06762004CB26C /* DetailViewController.h */,
+				0E661F8F19E06762004CB26C /* DetailViewController.m */,
+				0E661FB619E07048004CB26C /* Document.h */,
+				0E661FB719E07048004CB26C /* Document.m */,
+				0E571B9019E0AA69009374D5 /* Iphone.storyboard */,
+				0E571B5919E0A9F6009374D5 /* Ipad.storyboard */,
+				0E661F9419E06762004CB26C /* Images.xcassets */,
+				0E661F9619E06762004CB26C /* LaunchScreen.xib */,
+				0E661F8419E06762004CB26C /* Supporting Files */,
+			);
+			path = MobileFTSDemo;
+			sourceTree = "<group>";
+		};
+		0E661F8419E06762004CB26C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E661F8519E06762004CB26C /* Info.plist */,
+				0E661F8619E06762004CB26C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E661FA019E06762004CB26C /* MobileFTSDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FA319E06762004CB26C /* MobileFTSDemoTests.m */,
+				0E661FA119E06762004CB26C /* Supporting Files */,
+			);
+			path = MobileFTSDemoTests;
+			sourceTree = "<group>";
+		};
+		0E661FA119E06762004CB26C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FA219E06762004CB26C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E661FB919E08266004CB26C /* FTS */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FBA19E08266004CB26C /* Action */,
+				0E661FE219E08266004CB26C /* FTSConfiguration.h */,
+				0E661FE319E08266004CB26C /* FTSConfiguration.m */,
+				0E661FE419E08266004CB26C /* FTSDatabaseHandler.h */,
+				0E661FE519E08266004CB26C /* FTSDatabaseHandler.m */,
+				0E661FE619E08266004CB26C /* FTSDocumentHandler.h */,
+				0E661FE719E08266004CB26C /* FTSDocumentHandler.m */,
+			);
+			path = FTS;
+			sourceTree = "<group>";
+		};
+		0E661FBA19E08266004CB26C /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FBB19E08266004CB26C /* Data */,
+				0E661FC219E08266004CB26C /* FTSAction.h */,
+				0E661FC319E08266004CB26C /* FTSAction.m */,
+				0E661FC419E08266004CB26C /* Read */,
+				0E661FCC19E08266004CB26C /* Write */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		0E661FBB19E08266004CB26C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FBC19E08266004CB26C /* FTSActionData.h */,
+				0E661FBD19E08266004CB26C /* FTSActionData.m */,
+				0E661FBE19E08266004CB26C /* FTSReadActionData.h */,
+				0E661FBF19E08266004CB26C /* FTSReadActionData.m */,
+				0E661FC019E08266004CB26C /* FTSWriteActionData.h */,
+				0E661FC119E08266004CB26C /* FTSWriteActionData.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0E661FC419E08266004CB26C /* Read */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FC519E08266004CB26C /* FTSFindDocumentAction.h */,
+				0E661FC619E08266004CB26C /* FTSFindDocumentAction.m */,
+				0E661FC719E08266004CB26C /* FTSReadAction.h */,
+				0E661FC819E08266004CB26C /* FTSReadAction.m */,
+				0E661FC919E08266004CB26C /* QueryProcessor */,
+			);
+			path = Read;
+			sourceTree = "<group>";
+		};
+		0E661FC919E08266004CB26C /* QueryProcessor */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FCA19E08266004CB26C /* FTSQueryPreprocessor.h */,
+				0E661FCB19E08266004CB26C /* FTSQueryPreprocessor.m */,
+			);
+			path = QueryProcessor;
+			sourceTree = "<group>";
+		};
+		0E661FCC19E08266004CB26C /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FCD19E08266004CB26C /* Extractor */,
+				0E661FDC19E08266004CB26C /* FTSAddDocumentAction.h */,
+				0E661FDD19E08266004CB26C /* FTSAddDocumentAction.m */,
+				0E661FDE19E08266004CB26C /* FTSRemoveDocumentAction.h */,
+				0E661FDF19E08266004CB26C /* FTSRemoveDocumentAction.m */,
+				0E661FE019E08266004CB26C /* FTSWriteAction.h */,
+				0E661FE119E08266004CB26C /* FTSWriteAction.m */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		0E661FCD19E08266004CB26C /* Extractor */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FCE19E08266004CB26C /* FTSContentExtractor.h */,
+				0E661FCF19E08266004CB26C /* FTSContentExtractor.m */,
+				0E661FD019E08266004CB26C /* FTSDefaultContentExtractor.h */,
+				0E661FD119E08266004CB26C /* FTSDefaultContentExtractor.m */,
+				0E661FD219E08266004CB26C /* FTSHtmlContentExtractor.h */,
+				0E661FD319E08266004CB26C /* FTSHtmlContentExtractor.m */,
+				0E661FD419E08266004CB26C /* FTSJsonContentExtractor.h */,
+				0E661FD519E08266004CB26C /* FTSJsonContentExtractor.m */,
+				0E661FD619E08266004CB26C /* FTSPdfContentExtractor.h */,
+				0E661FD719E08266004CB26C /* FTSPdfContentExtractor.m */,
+				0E661FD819E08266004CB26C /* FTSXmlContentExtractor.h */,
+				0E661FD919E08266004CB26C /* FTSXmlContentExtractor.m */,
+				0E661FDA19E08266004CB26C /* PDFStringParser.h */,
+				0E661FDB19E08266004CB26C /* PDFStringParser.m */,
+			);
+			path = Extractor;
+			sourceTree = "<group>";
+		};
+		0E661FFC19E08275004CB26C /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FFD19E08275004CB26C /* html */,
+				0E661FFF19E08275004CB26C /* json */,
+				0E66200119E08275004CB26C /* pdf */,
+				0E66200319E08275004CB26C /* plaintext */,
+				0E66200919E08275004CB26C /* xml */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
+		0E661FFD19E08275004CB26C /* html */ = {
+			isa = PBXGroup;
+			children = (
+				0E661FFE19E08275004CB26C /* css_zen_garden.html */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
+		0E661FFF19E08275004CB26C /* json */ = {
+			isa = PBXGroup;
+			children = (
+				0E66200019E08275004CB26C /* sample.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		0E66200119E08275004CB26C /* pdf */ = {
+			isa = PBXGroup;
+			children = (
+				0E66200219E08275004CB26C /* example.pdf */,
+			);
+			path = pdf;
+			sourceTree = "<group>";
+		};
+		0E66200319E08275004CB26C /* plaintext */ = {
+			isa = PBXGroup;
+			children = (
+				0E66200419E08275004CB26C /* cicero.txt */,
+				0E66200519E08275004CB26C /* document.txt */,
+				0E66200619E08275004CB26C /* kafka.txt */,
+				0E66200719E08275004CB26C /* pangram.txt */,
+				0E66200819E08275004CB26C /* werther.txt */,
+			);
+			path = plaintext;
+			sourceTree = "<group>";
+		};
+		0E66200919E08275004CB26C /* xml */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xml;
+			sourceTree = "<group>";
+		};
+		509C482C0DF644568D0F552E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B95CF76D8BFC4012B31CB51D /* libPods-MobileFTSDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E661F8019E06762004CB26C /* MobileFTSDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E661FA719E06762004CB26C /* Build configuration list for PBXNativeTarget "MobileFTSDemo" */;
+			buildPhases = (
+				F71E7B9C0D534175975AA0EE /* Check Pods Manifest.lock */,
+				0E661F7D19E06762004CB26C /* Sources */,
+				0E661F7E19E06762004CB26C /* Frameworks */,
+				0E661F7F19E06762004CB26C /* Resources */,
+				C63CC2426708477ABB49D4D4 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobileFTSDemo;
+			productName = MobileFTSDemo;
+			productReference = 0E661F8119E06762004CB26C /* MobileFTSDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0E661F9C19E06762004CB26C /* MobileFTSDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E661FAA19E06762004CB26C /* Build configuration list for PBXNativeTarget "MobileFTSDemoTests" */;
+			buildPhases = (
+				0E661F9919E06762004CB26C /* Sources */,
+				0E661F9A19E06762004CB26C /* Frameworks */,
+				0E661F9B19E06762004CB26C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E661F9F19E06762004CB26C /* PBXTargetDependency */,
+			);
+			name = MobileFTSDemoTests;
+			productName = MobileFTSDemoTests;
+			productReference = 0E661F9D19E06762004CB26C /* MobileFTSDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E661F7919E06762004CB26C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Namics;
+				TargetAttributes = {
+					0E661F8019E06762004CB26C = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					0E661F9C19E06762004CB26C = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 0E661F8019E06762004CB26C;
+					};
+				};
+			};
+			buildConfigurationList = 0E661F7C19E06762004CB26C /* Build configuration list for PBXProject "MobileFTSDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0E661F7819E06762004CB26C;
+			productRefGroup = 0E661F8219E06762004CB26C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E661F8019E06762004CB26C /* MobileFTSDemo */,
+				0E661F9C19E06762004CB26C /* MobileFTSDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E661F7F19E06762004CB26C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E66200B19E08275004CB26C /* sample.json in Resources */,
+				0E66200E19E08275004CB26C /* document.txt in Resources */,
+				0E66201119E08275004CB26C /* werther.txt in Resources */,
+				0E571B9119E0AA69009374D5 /* Iphone.storyboard in Resources */,
+				0E571B5A19E0A9F6009374D5 /* Ipad.storyboard in Resources */,
+				0E66200D19E08275004CB26C /* cicero.txt in Resources */,
+				0E66200F19E08275004CB26C /* kafka.txt in Resources */,
+				0E661F9819E06762004CB26C /* LaunchScreen.xib in Resources */,
+				0E66200C19E08275004CB26C /* example.pdf in Resources */,
+				0E661F9519E06762004CB26C /* Images.xcassets in Resources */,
+				0E66200A19E08275004CB26C /* css_zen_garden.html in Resources */,
+				0E66201019E08275004CB26C /* pangram.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E661F9B19E06762004CB26C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C63CC2426708477ABB49D4D4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MobileFTSDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F71E7B9C0D534175975AA0EE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E661F7D19E06762004CB26C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E661F8A19E06762004CB26C /* AppDelegate.m in Sources */,
+				0E661F8D19E06762004CB26C /* MasterViewController.m in Sources */,
+				0E661FF219E08266004CB26C /* FTSJsonContentExtractor.m in Sources */,
+				0E661FF119E08266004CB26C /* FTSHtmlContentExtractor.m in Sources */,
+				0E661FF719E08266004CB26C /* FTSRemoveDocumentAction.m in Sources */,
+				0E661F8719E06762004CB26C /* main.m in Sources */,
+				0E661FB819E07048004CB26C /* Document.m in Sources */,
+				0E661FF819E08266004CB26C /* FTSWriteAction.m in Sources */,
+				0E661FE919E08266004CB26C /* FTSReadActionData.m in Sources */,
+				0E661FEC19E08266004CB26C /* FTSFindDocumentAction.m in Sources */,
+				0E661FF019E08266004CB26C /* FTSDefaultContentExtractor.m in Sources */,
+				0E661F9019E06762004CB26C /* DetailViewController.m in Sources */,
+				0E661FF919E08266004CB26C /* FTSConfiguration.m in Sources */,
+				0E661FFB19E08266004CB26C /* FTSDocumentHandler.m in Sources */,
+				0E661FEE19E08266004CB26C /* FTSQueryPreprocessor.m in Sources */,
+				0E661FF319E08266004CB26C /* FTSPdfContentExtractor.m in Sources */,
+				0E661FF619E08266004CB26C /* FTSAddDocumentAction.m in Sources */,
+				0E661FED19E08266004CB26C /* FTSReadAction.m in Sources */,
+				0E661FEB19E08266004CB26C /* FTSAction.m in Sources */,
+				0E661FF519E08266004CB26C /* PDFStringParser.m in Sources */,
+				0E661FE819E08266004CB26C /* FTSActionData.m in Sources */,
+				0E661FEA19E08266004CB26C /* FTSWriteActionData.m in Sources */,
+				0E661FF419E08266004CB26C /* FTSXmlContentExtractor.m in Sources */,
+				0E661FEF19E08266004CB26C /* FTSContentExtractor.m in Sources */,
+				0E661FFA19E08266004CB26C /* FTSDatabaseHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E661F9919E06762004CB26C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E661FA419E06762004CB26C /* MobileFTSDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E661F9F19E06762004CB26C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E661F8019E06762004CB26C /* MobileFTSDemo */;
+			targetProxy = 0E661F9E19E06762004CB26C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0E661F9619E06762004CB26C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E661F9719E06762004CB26C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E661FA519E06762004CB26C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E661FA619E06762004CB26C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0E661FA819E06762004CB26C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MobileFTSDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0E661FA919E06762004CB26C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MobileFTSDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		0E661FAB19E06762004CB26C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MobileFTSDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobileFTSDemo.app/MobileFTSDemo";
+			};
+			name = Debug;
+		};
+		0E661FAC19E06762004CB26C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MobileFTSDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobileFTSDemo.app/MobileFTSDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E661F7C19E06762004CB26C /* Build configuration list for PBXProject "MobileFTSDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E661FA519E06762004CB26C /* Debug */,
+				0E661FA619E06762004CB26C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E661FA719E06762004CB26C /* Build configuration list for PBXNativeTarget "MobileFTSDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E661FA819E06762004CB26C /* Debug */,
+				0E661FA919E06762004CB26C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E661FAA19E06762004CB26C /* Build configuration list for PBXNativeTarget "MobileFTSDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E661FAB19E06762004CB26C /* Debug */,
+				0E661FAC19E06762004CB26C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E661F7919E06762004CB26C /* Project object */;
+}
