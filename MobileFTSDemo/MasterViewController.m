@@ -29,27 +29,6 @@
     [super awakeFromNib];
 }
 
-- (void)displaySearchBar
-{
-    
-    [self.addButton setHidden:YES];
-    [self.addDocumentTextField setHidden:YES];
-    [self.searchBar setHidden:NO];
-    
-    [self.searchBar becomeFirstResponder];
-}
-
-- (void)displayAddDocument
-{
-    [self loadDocumentsFromIndex];
-    
-    [self.addButton setHidden:NO];
-    [self.addDocumentTextField setHidden:NO];
-    [self.searchBar setHidden:YES];
-    
-    [self.addDocumentTextField becomeFirstResponder];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -78,6 +57,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)displaySearchBar
+{
+    
+    [self.addButton setHidden:YES];
+    [self.addDocumentTextField setHidden:YES];
+    [self.searchBar setHidden:NO];
+    
+    [self.searchBar becomeFirstResponder];
+}
+
+- (void)displayAddDocument
+{
+    [self loadDocumentsFromIndex];
+    
+    [self.addButton setHidden:NO];
+    [self.addDocumentTextField setHidden:NO];
+    [self.searchBar setHidden:YES];
+    
+    [self.addDocumentTextField becomeFirstResponder];
+}
+
+- (void)displayAddDocumentButton
+{
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDocumentViewAppear:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)displayCancelDocumentButton
+{
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(addDocumentViewAppear:)];
+    self.navigationItem.rightBarButtonItem = cancelButton;
+}
+
 - (void)loadDocumentsFromIndex
 {
     [_indexedDocumentHandler findDocuments:[self.searchBar text]];
@@ -86,14 +98,10 @@
 - (void)addDocumentViewAppear:(id)sender
 {
     if([self.searchBar isHidden]) {
-        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDocumentViewAppear:)];
-        self.navigationItem.rightBarButtonItem = addButton;
-        
+        [self displayAddDocumentButton];
         [self displaySearchBar];
     } else {
-        UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(addDocumentViewAppear:)];
-        self.navigationItem.rightBarButtonItem = cancelButton;
-        
+        [self displayCancelDocumentButton];
         [self displayAddDocument];
     }
 }
@@ -218,9 +226,7 @@
 // UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDocumentViewAppear:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
+    [self displayAddDocumentButton];
     [self addDocument];
     return NO;
 }
