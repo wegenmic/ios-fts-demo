@@ -86,8 +86,14 @@
 - (void)addDocumentViewAppear:(id)sender
 {
     if([self.searchBar isHidden]) {
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDocumentViewAppear:)];
+        self.navigationItem.rightBarButtonItem = addButton;
+        
         [self displaySearchBar];
     } else {
+        UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(addDocumentViewAppear:)];
+        self.navigationItem.rightBarButtonItem = cancelButton;
+        
         [self displayAddDocument];
     }
 }
@@ -212,6 +218,9 @@
 // UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDocumentViewAppear:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    
     [self addDocument];
     return NO;
 }
