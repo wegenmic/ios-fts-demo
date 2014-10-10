@@ -38,7 +38,6 @@
             [_webView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ];
         }
 
-        NSLog(@"Open WebView with path: [%@]", self.doc.path);
         NSURLRequest *request = [NSURLRequest requestWithURL:[self.doc.path absoluteURL]];
         [_webView loadRequest:request];
     }

@@ -58,7 +58,6 @@
 
 - (void)displaySearchBar
 {
-    
     [self.addButton setHidden:YES];
     [self.addDocumentTextField setHidden:YES];
     [self.searchBar setHidden:NO];
