@@ -174,6 +174,7 @@
 // Actions
 - (IBAction)addDocument:(id)sender
 {
+    [self displayAddDocumentButton];
     [self addDocument];
 }
 
