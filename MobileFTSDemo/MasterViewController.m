@@ -224,9 +224,8 @@
     }
     
     [_objects removeAllObjects];
-    for (NSString * documentPath in documentPaths) {
-        NSURL *urlPath = [NSURL URLWithString:[documentPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        Document *doc = [[Document alloc] initWithPath:urlPath];
+    for (NSURL *documentPath in documentPaths) {
+        Document *doc = [[Document alloc] initWithPath:documentPath];
         [_objects insertObject:doc atIndex:0];
     }
     [self.tableView reloadData];

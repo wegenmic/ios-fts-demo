@@ -18,16 +18,18 @@
 - (void)write:(NSURL *)documentPath {
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         NSDate *start = [NSDate date];
+        FTSWriteActionData *writeActionData = [[FTSWriteActionData alloc] initWithDocumentPath:documentPath];
         [[self.handler writeQueue] addOperationWithBlock:^{
             [[self.handler writeQueueLock] lock];
             [[self.handler queue] inDatabase:^(FMDatabase *database) {
-                [self action:[[FTSWriteActionData alloc] initWithDocumentPath:documentPath andDatabase:database]];
+                writeActionData.database = database;
+                [self action:writeActionData];
             }];
             [[self.handler writeQueueLock] unlock];
         }];
         NSDate *end = [NSDate date];
         NSTimeInterval executionTime = [end timeIntervalSinceDate:start];
-        NSLog(@"%@ Document [%@] took %f s", self.actionName, documentPath, executionTime);
+        NSLog(@"%@ Document [%@] took %f s", self.actionName, writeActionData.filename, executionTime);
     });
 }
 
@@ -100,8 +102,8 @@
     return metadata;
 }
 
-- (BOOL)documentExists:(NSString *)documentPath inDatabase:(FMDatabase *)database {
-    FMResultSet *rs = [database executeQuery:[NSString stringWithFormat:@"SELECT path FROM %@ WHERE path MATCH ?", [self.handler tableName]], documentPath, nil];
+- (BOOL)documentExists:(NSString *)filename inDatabase:(FMDatabase *)database {
+    FMResultSet *rs = [database executeQuery:[NSString stringWithFormat:@"SELECT path FROM %@ WHERE path MATCH ?", [self.handler tableName]], filename, nil];
     BOOL exists = [rs next];
     [rs close];
     return exists;

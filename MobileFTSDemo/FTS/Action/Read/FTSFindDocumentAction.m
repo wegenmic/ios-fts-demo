@@ -33,10 +33,15 @@
         rs = [input.database executeQuery:[NSString stringWithFormat:@"SELECT path FROM %@ WHERE content MATCH ?", [self.handler tableName]], input.query, nil];
     }
     
+    // TODO move to singleton creation
+    NSString *documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    
     while ([rs next]) {
-        NSString *path = [rs stringForColumn:@"path"];
-        if(path != nil) {
-            [foundDocumentPaths addObject:path];
+        NSString *filename = [rs stringForColumn:@"path"];
+        NSString *documentPath = [documentsDir stringByAppendingPathComponent:filename];
+        NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
+        if(documentUrl != nil) {
+            [foundDocumentPaths addObject:documentUrl];
         }
         
     }

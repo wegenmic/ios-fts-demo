@@ -28,8 +28,6 @@
     
     [self prepareDatabaseConnection];
     [self prepareDatabase];
-    // TODO remove this iOS Simulator workaround
-    [self cleanDatabase];
     return self;
 }
 

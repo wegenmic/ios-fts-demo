@@ -23,8 +23,8 @@
 }
 
 - (void)action:(FTSWriteActionData *)input {
-    BOOL success = [input.database executeUpdate:[NSString stringWithFormat:@"DELETE FROM %@ WHERE path = ?", [self.handler tableName]], input.documentPath, nil];
-    [self notifyDelegate:success forDocument:input.documentPath];
+    BOOL success = [input.database executeUpdate:[NSString stringWithFormat:@"DELETE FROM %@ WHERE path = ?", [self.handler tableName]], input.filename, nil];
+    [self notifyDelegate:success forDocument:input.originDocumentPath];
 }
 
 - (void)notifyDelegate:(BOOL)success forDocument:(NSURL *)documentPath {

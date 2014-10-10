@@ -25,22 +25,22 @@
 - (void)action:(FTSWriteActionData *)input {
     BOOL success = NO;
     
-    if(input.documentPath == nil) {
-        [self notifyAddDelegate:success forDocument:input.documentPath];
+    if(input.filename == nil) {
+        [self notifyAddDelegate:success forDocument:input.originDocumentPath];
         return;
     }
     
-    NSString *content = [self retrieveContentFromDocument:input.documentPath];
-    NSString *metadata = [self retrieveMetadataFromDocument:input.documentPath];
+    NSString *content = [self retrieveContentFromDocument:input.targetDocumentPath];
+    NSString *metadata = [self retrieveMetadataFromDocument:input.targetDocumentPath];
     
-    if ([self documentExists:input.documentPath inDatabase:input.database]) {
+    if ([self documentExists:input.filename inDatabase:input.database]) {
         // UPDATE - document exists.
-        success = [input.database executeUpdate:[NSString stringWithFormat:@"UPDATE %@ SET keywords = ?, content = ? WHERE path = ?", [self.handler tableName]], metadata, content, input.documentPath,  nil];
-        [self notifyUpdateDelegate:success forDocument:input.documentPath];
+        success = [input.database executeUpdate:[NSString stringWithFormat:@"UPDATE %@ SET keywords = ?, content = ? WHERE path = ?", [self.handler tableName]], metadata, content, input.filename,  nil];
+        [self notifyUpdateDelegate:success forDocument:input.originDocumentPath];
     } else {
         // ADD - document does not exist yet.
-        success = [input.database executeUpdate:[NSString stringWithFormat:@"INSERT INTO %@(path, keywords, content) VALUES(?, ?, ?)", [self.handler tableName]], input.documentPath, metadata, content, nil];
-        [self notifyAddDelegate:success forDocument:input.documentPath];
+        success = [input.database executeUpdate:[NSString stringWithFormat:@"INSERT INTO %@(path, keywords, content) VALUES(?, ?, ?)", [self.handler tableName]], input.filename, metadata, content, nil];
+        [self notifyAddDelegate:success forDocument:input.originDocumentPath];
     }
 }
 

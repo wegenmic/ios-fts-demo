@@ -10,8 +10,10 @@
 
 @interface FTSWriteActionData : FTSActionData
 
-@property (strong, nonatomic) NSURL *documentPath;
+@property (strong, nonatomic) NSURL *originDocumentPath;
+@property (strong, nonatomic) NSURL *targetDocumentPath;
+@property (strong, nonatomic) NSString *filename;
 
-- (instancetype)initWithDocumentPath:(NSURL *)documentPath andDatabase:(FMDatabase *)database;
+- (instancetype)initWithDocumentPath:(NSURL *)documentPath;
 
 @end

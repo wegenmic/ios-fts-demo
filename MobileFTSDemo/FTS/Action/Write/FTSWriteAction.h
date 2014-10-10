@@ -19,6 +19,6 @@
 // Helper Functions
 - (NSString *)retrieveContentFromDocument:(NSURL *)documentPath;
 - (NSString *)retrieveMetadataFromDocument:(NSURL *)documentPath;
-- (BOOL)documentExists:(NSURL *)documentPath inDatabase:(FMDatabase *)database;
+- (BOOL)documentExists:(NSString *)filename inDatabase:(FMDatabase *)database;
 
 @end
