@@ -40,9 +40,8 @@
     [super viewDidLoad];
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDocumentViewAppear:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
+    [self displayAddDocumentButton];
+
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     }
