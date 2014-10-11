@@ -185,11 +185,17 @@
     if(documentUrl != nil) {
         [_indexedDocumentHandler addDocument:[documentUrl absoluteURL]];
     } else {
-        NSLog(@"Could not find the Document [%@]", documentPath);
+        [self displayGlobalMessage:[NSString stringWithFormat:@"Document [%@] not found", documentPath] withTitle:@"Could not add Document to Index"];
     }
 
     self.addDocumentTextField.text = @"";
     [self displaySearchBar];
+}
+
+- (void)displayGlobalMessage:(NSString*)message withTitle:(NSString *)title
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
 }
 
 - (NSArray *)separateComponents:(NSString *)input byLastOccurrence:(NSString *)delimiter {
@@ -253,7 +259,7 @@
 }
 -(void)ftsDocumentAction:(FTSRemoveDocumentAction *)action didFailRemovingDocument:(NSURL *)pathToDocument
 {
-    NSLog(@"Failed to remove Document [%@]", pathToDocument);
+    [self displayGlobalMessage:[NSString stringWithFormat:@"Failed to remove Document [%@]", pathToDocument] withTitle:nil];
 }
 
 // FTSAddDocumentActionDelegate
@@ -266,7 +272,7 @@
 }
 -(void)ftsDocumentAction:(FTSAddDocumentAction *)action didFailAddingDocument:(NSURL *)pathToDocument
 {
-    NSLog(@"Failed to add Document [%@]", pathToDocument);
+    [self displayGlobalMessage:[NSString stringWithFormat:@"Failed to add Document [%@]", pathToDocument] withTitle:nil];
 }
 
 // Update
@@ -277,7 +283,7 @@
 }
 -(void)ftsDocumentAction:(FTSAddDocumentAction *)action didFailUpdatingDocument:(NSURL *)pathToDocument
 {
-    NSLog(@"Failed to update Document [%@]", pathToDocument);
+    [self displayGlobalMessage:[NSString stringWithFormat:@"Failed to update Document [%@]", pathToDocument] withTitle:nil];
 }
 
 @end

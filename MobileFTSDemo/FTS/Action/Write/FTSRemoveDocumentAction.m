@@ -24,6 +24,10 @@
 
 - (void)action:(FTSWriteActionData *)input {
     BOOL success = [input.database executeUpdate:[NSString stringWithFormat:@"DELETE FROM %@ WHERE path = ?", [self.handler tableName]], input.filename, nil];
+    if(success) {
+        // after removing, check if document does not exist anymore in the index.
+        success = ![self documentExists:input.filename inDatabase:input.database];
+    }
     [self notifyDelegate:success forDocument:input.originDocumentPath];
 }
 
