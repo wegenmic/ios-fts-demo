@@ -183,7 +183,7 @@
     NSURL* documentUrl = [[NSBundle mainBundle] URLForResource:splitDocumentPath[0] withExtension:splitDocumentPath[1]];
     
     if(documentUrl != nil) {
-        [_indexedDocumentHandler addDocument:[documentUrl absoluteURL]];
+        [_indexedDocumentHandler addDocument:documentUrl];
     } else {
         [self displayGlobalMessage:[NSString stringWithFormat:@"Document [%@] not found", documentPath] withTitle:@"Could not add Document to Index"];
     }
