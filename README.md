@@ -59,7 +59,8 @@ Now you are ready to run the project.
 
 ##<a id="how-to-use" name="how-to-use"></a>How to use it
 
-h3. Access the complete functional range via the FTSDocumentHandler
+**Access the complete functional range via the FTSDocumentHandler**
+
 Instantiate a Singleton of **FTSDocumentHandler** and you are ready to go crazy. Notice that you have to pass a delegate.
 All the calls are asynchronous that will give feedback via their delegate callbacks.
 
@@ -82,7 +83,8 @@ Additionally after every word a wildcard (*) will be added. That means a search 
 - salesman travelling
 - a weary salesman that likes to travel
 
-h3. Centralised Configuration
+**Centralised Configuration**
+
 Within the context of **FTSConstants** all configurable options are available at one place.
 All SQL Queries and further Configurations can be adapted here if needed.
 
