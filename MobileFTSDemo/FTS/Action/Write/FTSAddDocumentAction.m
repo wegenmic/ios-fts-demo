@@ -7,6 +7,7 @@
 //
 
 #import "FTSAddDocumentAction.h"
+#import "FTSConstants.h"
 
 @implementation FTSAddDocumentAction
 
@@ -35,11 +36,11 @@
     
     if ([self documentExists:input.filename inDatabase:input.database]) {
         // UPDATE - document exists.
-        success = [input.database executeUpdate:[NSString stringWithFormat:@"UPDATE %@ SET keywords = ?, content = ? WHERE path = ?", [self.handler tableName]], metadata, content, input.filename,  nil];
+        success = [input.database executeUpdate:[NSString stringWithFormat:updateDocumentQuery, tableName], metadata, content, input.filename,  nil];
         [self notifyUpdateDelegate:success forDocument:input.originDocumentPath];
     } else {
         // ADD - document does not exist yet.
-        success = [input.database executeUpdate:[NSString stringWithFormat:@"INSERT INTO %@(path, keywords, content) VALUES(?, ?, ?)", [self.handler tableName]], input.filename, metadata, content, nil];
+        success = [input.database executeUpdate:[NSString stringWithFormat:addDocumentQuery, tableName], input.filename, metadata, content, nil];
         [self notifyAddDelegate:success forDocument:input.originDocumentPath];
     }
 }

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Namics. All rights reserved.
 //
 
+#import "FTSConstants.h"
 #import "FTSFindDocumentAction.h"
 
 @implementation FTSFindDocumentAction
@@ -28,16 +29,15 @@
     FMResultSet *rs;
     if([input.query length] == 0) {
         // search for all documents in index when there is an empty input query
-        rs = [input.database executeQuery:[NSString stringWithFormat:@"SELECT path FROM %@", [self.handler tableName]]];
+        rs = [input.database executeQuery:[NSString stringWithFormat:findAllDocumentsQuery, tableName]];
     } else {
-        rs = [input.database executeQuery:[NSString stringWithFormat:@"SELECT path FROM %@ WHERE content MATCH ?", [self.handler tableName]], input.query, nil];
+        rs = [input.database executeQuery:[NSString stringWithFormat:findDocumentByContentQuery, tableName], input.query, nil];
     }
     
-    // TODO move to singleton creation
     NSString *documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     
     while ([rs next]) {
-        NSString *filename = [rs stringForColumn:@"path"];
+        NSString *filename = [rs stringForColumn:tableIdColumn];
         NSString *documentPath = [documentsDir stringByAppendingPathComponent:filename];
         NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
         if(documentUrl != nil) {

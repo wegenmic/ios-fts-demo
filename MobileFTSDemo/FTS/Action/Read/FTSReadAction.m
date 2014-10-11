@@ -7,6 +7,7 @@
 //
 
 #import "FTSReadAction.h"
+#import "FTSConstants.h"
 
 @implementation FTSReadAction
 
@@ -14,8 +15,8 @@
     self.lastSearchQuery = query;
     
     // add execution delay for 1.0s if the search query has 3 or less characters
-    double_t delay = 1.0;
-	if ([query length] > 3) {
+    double_t delay = searchDelayInSeconds;
+	if ([query length] > delayedSearchQueryLength) {
 		delay = 0.0;
 	}
 	dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
@@ -42,7 +43,7 @@
     NSMutableString *queryWithFacets = [[NSMutableString alloc] init];
     
     for (NSString *facet in facets) {
-        [queryWithFacets appendFormat:@"keywords:%@ ", facet];
+        [queryWithFacets appendFormat:@"%@:%@ ", tableMetadataColumn, facet];
     }
     
     [queryWithFacets appendString:query];

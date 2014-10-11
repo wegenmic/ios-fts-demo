@@ -12,6 +12,7 @@
 #import "FTSHtmlContentExtractor.h"
 #import "FTSPdfContentExtractor.h"
 #import "FTSJsonContentExtractor.h"
+#import "FTSConstants.h"
 
 @implementation FTSWriteAction
 
@@ -103,7 +104,7 @@
 }
 
 - (BOOL)documentExists:(NSString *)filename inDatabase:(FMDatabase *)database {
-    FMResultSet *rs = [database executeQuery:[NSString stringWithFormat:@"SELECT path FROM %@ WHERE path MATCH ?", [self.handler tableName]], filename, nil];
+    FMResultSet *rs = [database executeQuery:[NSString stringWithFormat:findDocumentByPathQuery, tableName], filename, nil];
     BOOL exists = [rs next];
     [rs close];
     return exists;

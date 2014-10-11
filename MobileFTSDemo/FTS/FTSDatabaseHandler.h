@@ -14,8 +14,6 @@
 @property (strong, nonatomic) FMDatabaseQueue *queue;
 @property (strong, nonatomic) NSOperationQueue *writeQueue;
 @property (strong, nonatomic) NSRecursiveLock *writeQueueLock;
-@property (strong, nonatomic) NSString *tableName;
-@property (strong, nonatomic) NSString *databasePath;
 
 // Creates a singleton instance of FTSDatabaseHandler
 + (FTSDatabaseHandler *)sharedFTSDatabaseHandler;

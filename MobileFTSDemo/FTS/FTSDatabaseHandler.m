@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Namics. All rights reserved.
 //
 
+#import "FTSConstants.h"
 #import "FTSDatabaseHandler.h"
 #import "FMDatabase.h"
 
@@ -23,9 +24,6 @@
 }
 
 - (instancetype)init {
-    self.databasePath = @"UserDatabase.sqlite";
-    self.tableName = @"nfsdocuments";
-    
     [self prepareDatabaseConnection];
     [self prepareDatabase];
     return self;
@@ -36,7 +34,7 @@
     NSLog(@"Prepare Database connection.");
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDir = [docPaths objectAtIndex:0];
-    NSString *dbPath = [documentsDir stringByAppendingPathComponent:self.databasePath];
+    NSString *dbPath = [documentsDir stringByAppendingPathComponent:databasePath];
     
     _queue = [FMDatabaseQueue databaseQueueWithPath:dbPath];
     _writeQueue = [NSOperationQueue new];
@@ -51,7 +49,7 @@
         [_queue inDatabase:^(FMDatabase *database) {
             NSLog(@"Start preparing FTS DB...");
             // Create DB Table if it doesn't exist.
-            BOOL success = [database executeUpdate:[NSString stringWithFormat:@"CREATE VIRTUAL TABLE IF NOT EXISTS %@ USING fts4(path, keywords, content)", self.tableName]];
+            BOOL success = [database executeUpdate:[NSString stringWithFormat:createDatabaseQuery, tableName]];
             
             if(success) {
                 NSLog(@"Finished Preparing FTS DB");
@@ -69,7 +67,7 @@
         [_writeQueueLock lock];
         [_queue inDatabase:^(FMDatabase *database) {
             NSLog(@"Cleanup FTS DB");
-            [database executeUpdate:[NSString stringWithFormat:@"DROP TABLE %@", self.tableName]];
+            [database executeUpdate:[NSString stringWithFormat:killDatabaseQuery, tableName]];
         }];
         [_writeQueueLock unlock];
     }];
@@ -81,7 +79,7 @@
             [_writeQueueLock lock];
             [_queue inDatabase:^(FMDatabase *database) {
                 NSLog(@"Remove all documents from FTS DB");
-                [database executeUpdate:[NSString stringWithFormat:@"DELETE FROM %@", self.tableName], nil];
+                [database executeUpdate:[NSString stringWithFormat:cleanDatabaseQuery, tableName], nil];
             }];
             [_writeQueueLock unlock];
         }];

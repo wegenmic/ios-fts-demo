@@ -34,7 +34,7 @@
 		0E661FF619E08266004CB26C /* FTSAddDocumentAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FDD19E08266004CB26C /* FTSAddDocumentAction.m */; };
 		0E661FF719E08266004CB26C /* FTSRemoveDocumentAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FDF19E08266004CB26C /* FTSRemoveDocumentAction.m */; };
 		0E661FF819E08266004CB26C /* FTSWriteAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FE119E08266004CB26C /* FTSWriteAction.m */; };
-		0E661FF919E08266004CB26C /* FTSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FE319E08266004CB26C /* FTSConfiguration.m */; };
+		0E661FF919E08266004CB26C /* FTSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FE319E08266004CB26C /* FTSConstants.m */; };
 		0E661FFA19E08266004CB26C /* FTSDatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FE519E08266004CB26C /* FTSDatabaseHandler.m */; };
 		0E661FFB19E08266004CB26C /* FTSDocumentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FE719E08266004CB26C /* FTSDocumentHandler.m */; };
 		0E66200A19E08275004CB26C /* css_zen_garden.html in Resources */ = {isa = PBXBuildFile; fileRef = 0E661FFE19E08275004CB26C /* css_zen_garden.html */; };
@@ -111,8 +111,8 @@
 		0E661FDF19E08266004CB26C /* FTSRemoveDocumentAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSRemoveDocumentAction.m; sourceTree = "<group>"; };
 		0E661FE019E08266004CB26C /* FTSWriteAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSWriteAction.h; sourceTree = "<group>"; };
 		0E661FE119E08266004CB26C /* FTSWriteAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSWriteAction.m; sourceTree = "<group>"; };
-		0E661FE219E08266004CB26C /* FTSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSConfiguration.h; sourceTree = "<group>"; };
-		0E661FE319E08266004CB26C /* FTSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSConfiguration.m; sourceTree = "<group>"; };
+		0E661FE219E08266004CB26C /* FTSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSConstants.h; sourceTree = "<group>"; };
+		0E661FE319E08266004CB26C /* FTSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSConstants.m; sourceTree = "<group>"; };
 		0E661FE419E08266004CB26C /* FTSDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSDatabaseHandler.h; sourceTree = "<group>"; };
 		0E661FE519E08266004CB26C /* FTSDatabaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSDatabaseHandler.m; sourceTree = "<group>"; };
 		0E661FE619E08266004CB26C /* FTSDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSDocumentHandler.h; sourceTree = "<group>"; };
@@ -220,8 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				0E661FBA19E08266004CB26C /* Action */,
-				0E661FE219E08266004CB26C /* FTSConfiguration.h */,
-				0E661FE319E08266004CB26C /* FTSConfiguration.m */,
+				0E661FE219E08266004CB26C /* FTSConstants.h */,
+				0E661FE319E08266004CB26C /* FTSConstants.m */,
 				0E661FE419E08266004CB26C /* FTSDatabaseHandler.h */,
 				0E661FE519E08266004CB26C /* FTSDatabaseHandler.m */,
 				0E661FE619E08266004CB26C /* FTSDocumentHandler.h */,
@@ -530,7 +530,7 @@
 				0E661FEC19E08266004CB26C /* FTSFindDocumentAction.m in Sources */,
 				0E661FF019E08266004CB26C /* FTSDefaultContentExtractor.m in Sources */,
 				0E661F9019E06762004CB26C /* DetailViewController.m in Sources */,
-				0E661FF919E08266004CB26C /* FTSConfiguration.m in Sources */,
+				0E661FF919E08266004CB26C /* FTSConstants.m in Sources */,
 				0E661FFB19E08266004CB26C /* FTSDocumentHandler.m in Sources */,
 				0E661FEE19E08266004CB26C /* FTSQueryPreprocessor.m in Sources */,
 				0E661FF319E08266004CB26C /* FTSPdfContentExtractor.m in Sources */,
