@@ -10,14 +10,22 @@ The goal is to make it as easy as possible to integrate the functionality into y
 - Possibility to configure and extend functionality
 
 Want to add a new Document to the index that should be search?
+    
     -(void)addDocument:(NSURL *)documentPath;
+
 that returns via delegate
+    
     -(void)ftsDocumentAction:(FTSAddDocumentAction *)action didAddDocument:(NSURL *)pathToDocument;
 
+
 Want to find a Document?
+
     -(void)findDocuments:(NSString *)searchText;
+    
 that returns via delegate
+
     -(void)ftsDocumentAction:(FTSFindDocumentAction *)action didFindDocuments:(NSArray *)documentPaths forSearch:(NSString *)query;
+
 
 It is as easy as that!
 
