@@ -9,7 +9,7 @@ The goal is to make it as easy as possible to integrate the functionality into y
 - Easy to use Interface
 - Possibility to configure and extend functionality
 
-Want to add a new Document to the index that should be search?
+Want to add a new Document to the index that should be available for the search?
     
     -(void)addDocument:(NSURL *)documentPath;
 
@@ -90,12 +90,14 @@ All SQL Queries and further Configurations can be adapted here if needed.
 
 ##<a id="dependencies" name="dependencies"></a>Dependenies
 
+**TODO**
 Visual Dependencies on Cocoapods
 
 --------------------------
 
 ##<a id="under-the-hood" name="under-the-hood"></a>Under the Hood
 
+**TODO**
 - Features
 - How it works
 - Class Diagram
