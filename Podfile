@@ -10,6 +10,9 @@ target "MobileFTSDemo" do
 end
 
 target "MobileFTSDemoTests" do
-
+    pod 'FMDB', '2.3'
+    pod 'sqlite3', '3.8.4.3'
+    pod 'hpple', '0.2.0'
+    pod 'AGAsyncTestHelper', '1.0'
 end
 
