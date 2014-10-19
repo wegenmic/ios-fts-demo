@@ -107,8 +107,6 @@
     AGWW_WAIT_WHILE([self.foundDocuments count] != 1, 1);
 }
 
-// FTSFindDocumentActionDelegate
-
 -(void)ftsDocumentAction:(FTSFindDocumentAction *)action didFindDocuments:(NSArray *)documentPaths forSearch:(NSString *)query
 {
     [self.foundDocuments addObject:documentPaths];
