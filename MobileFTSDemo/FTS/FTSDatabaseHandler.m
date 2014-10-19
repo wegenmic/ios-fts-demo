@@ -24,6 +24,7 @@
 }
 
 - (instancetype)init {
+    self.workingDatabasePath = databasePath;
     [self prepareDatabaseConnection];
     [self prepareDatabase];
     return self;
@@ -31,15 +32,18 @@
 
 - (void)prepareDatabaseConnection
 {
-    NSLog(@"Prepare Database connection.");
-    NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDir = [docPaths objectAtIndex:0];
-    NSString *dbPath = [documentsDir stringByAppendingPathComponent:databasePath];
+    NSLog(@"Prepare Database connection");
+    NSString *documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *dbPath = [documentsDir stringByAppendingPathComponent:self.workingDatabasePath];
+    
+    [self copyDatabaseIfNeeded:dbPath];
     
     _queue = [FMDatabaseQueue databaseQueueWithPath:dbPath];
     _writeQueue = [NSOperationQueue new];
     [_writeQueue setMaxConcurrentOperationCount:1];
     _writeQueueLock = [NSRecursiveLock new];
+    
+    NSLog(@"Database connection prepared for path [%@]", dbPath);
 }
 
 - (void)prepareDatabase
@@ -61,13 +65,13 @@
     }];
 }
 
-- (void)killDatabase
+- (void)dropDatabase
 {
     [_writeQueue addOperationWithBlock:^{
         [_writeQueueLock lock];
         [_queue inDatabase:^(FMDatabase *database) {
             NSLog(@"Cleanup FTS DB");
-            [database executeUpdate:[NSString stringWithFormat:killDatabaseQuery, tableName]];
+            [database executeUpdate:[NSString stringWithFormat:dropTableDatabaseQuery, tableName]];
         }];
         [_writeQueueLock unlock];
     }];
@@ -75,14 +79,46 @@
 
 - (void)cleanDatabase
 {
-        [_writeQueue addOperationWithBlock:^{
-            [_writeQueueLock lock];
-            [_queue inDatabase:^(FMDatabase *database) {
-                NSLog(@"Remove all documents from FTS DB");
-                [database executeUpdate:[NSString stringWithFormat:cleanDatabaseQuery, tableName], nil];
-            }];
-            [_writeQueueLock unlock];
+    [_writeQueue addOperationWithBlock:^{
+        [_writeQueueLock lock];
+        [_queue inDatabase:^(FMDatabase *database) {
+            NSLog(@"Remove all documents from FTS DB");
+            [database executeUpdate:[NSString stringWithFormat:cleanDatabaseQuery, tableName], nil];
         }];
+        [_writeQueueLock unlock];
+    }];
+}
+
+- (void)deleteDatabase
+{
+    NSString *documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *dbPath = [documentsDir stringByAppendingPathComponent:self.workingDatabasePath];
+    
+    NSError *err = nil;
+    [[NSFileManager defaultManager] removeItemAtURL:[NSURL URLWithString:dbPath] error:&err];
+    if (err) {
+        NSLog(@"Error occured while deleting: %@",err);
+    }
+}
+
+- (void)copyDatabaseIfNeeded:(NSString *)targetDbPath
+{
+    NSString *documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *originDbPath = [documentsDir stringByAppendingPathComponent:databasePath];
+
+    NSURL *sourceUrl = [NSURL URLWithString:originDbPath];
+    NSURL *targetUrl = [NSURL URLWithString:targetDbPath];
+    
+    if([originDbPath isEqualToString:targetDbPath]) {
+        return;
+    }
+    
+    NSError *err = nil;
+    [[NSFileManager defaultManager] removeItemAtURL:targetUrl error:nil];
+    [[NSFileManager defaultManager] copyItemAtURL:sourceUrl toURL:targetUrl error:&err];
+    if (err) {
+        NSLog(@"Error occured when copying file: %@",err);
+    }
 }
 
 @end

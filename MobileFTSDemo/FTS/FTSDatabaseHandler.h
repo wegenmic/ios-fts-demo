@@ -11,6 +11,7 @@
 
 @interface FTSDatabaseHandler : NSObject
 
+@property (strong, nonatomic) NSString *workingDatabasePath;
 @property (strong, nonatomic) FMDatabaseQueue *queue;
 @property (strong, nonatomic) NSOperationQueue *writeQueue;
 @property (strong, nonatomic) NSRecursiveLock *writeQueueLock;
@@ -24,9 +25,12 @@
 // Setup database table if not already existing
 - (void)prepareDatabase;
 // Drop the Table created in [(void)prepareDatabase]
-- (void)killDatabase;
+- (void)dropDatabase;
+// Delete the database
+- (void)deleteDatabase;
 // Remove all entries from the Table created in [(void)prepareDatabase]
 - (void)cleanDatabase;
+
 
 
 @end

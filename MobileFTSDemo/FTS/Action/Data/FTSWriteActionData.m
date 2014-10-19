@@ -20,7 +20,9 @@
     NSString *documentsFolder = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *newDocumentPath = [documentsFolder stringByAppendingPathComponent:[documentPath lastPathComponent]];
     self.targetDocumentPath = [NSURL fileURLWithPath:newDocumentPath];
-    NSLog(@"Start copying from [%@] to [%@]", documentPath, self.targetDocumentPath);
+    if([self.targetDocumentPath isEqual:documentPath]) {
+        return [documentPath lastPathComponent];
+    }
     
     NSError *err = nil;
     [[NSFileManager defaultManager] removeItemAtURL:self.targetDocumentPath error:nil];

@@ -23,7 +23,7 @@ double_t const searchDelayInSeconds = 1.0;
 
 // Queries
 NSString* const createDatabaseQuery = @"CREATE VIRTUAL TABLE IF NOT EXISTS %@ USING fts4(path, keywords, content)";
-NSString* const killDatabaseQuery = @"DROP TABLE %@";
+NSString* const dropTableDatabaseQuery = @"DROP TABLE %@";
 NSString* const cleanDatabaseQuery = @"DELETE FROM %@";
 
 NSString* const addDocumentQuery = @"INSERT INTO %@(path, keywords, content) VALUES(?, ?, ?)";

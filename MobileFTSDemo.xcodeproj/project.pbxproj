@@ -15,7 +15,6 @@
 		0E661F9019E06762004CB26C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661F8F19E06762004CB26C /* DetailViewController.m */; };
 		0E661F9519E06762004CB26C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E661F9419E06762004CB26C /* Images.xcassets */; };
 		0E661F9819E06762004CB26C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E661F9619E06762004CB26C /* LaunchScreen.xib */; };
-		0E661FA419E06762004CB26C /* MobileFTSDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FA319E06762004CB26C /* MobileFTSDemoTests.m */; };
 		0E661FB819E07048004CB26C /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FB719E07048004CB26C /* Document.m */; };
 		0E661FE819E08266004CB26C /* FTSActionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FBD19E08266004CB26C /* FTSActionData.m */; };
 		0E661FE919E08266004CB26C /* FTSReadActionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E661FBF19E08266004CB26C /* FTSReadActionData.m */; };
@@ -45,6 +44,11 @@
 		0E66200F19E08275004CB26C /* kafka.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200619E08275004CB26C /* kafka.txt */; };
 		0E66201019E08275004CB26C /* pangram.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200719E08275004CB26C /* pangram.txt */; };
 		0E66201119E08275004CB26C /* werther.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E66200819E08275004CB26C /* werther.txt */; };
+		0EA4484819F3F38500FB70C4 /* FTSDocumentHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4484519F3F38500FB70C4 /* FTSDocumentHandlerTests.m */; };
+		0EA4484919F3F38500FB70C4 /* FTSQueryPreprocessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4484619F3F38500FB70C4 /* FTSQueryPreprocessorTests.m */; };
+		0EA4484B19F3F48400FB70C4 /* FTSExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4484A19F3F48400FB70C4 /* FTSExtractorTests.m */; };
+		0EA4486319F4028C00FB70C4 /* books.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0EA4486219F4028C00FB70C4 /* books.xml */; };
+		347ACDC0F2DC4602AA02C32A /* libPods-MobileFTSDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 329534BCED9A48A99BD67C12 /* libPods-MobileFTSDemoTests.a */; };
 		F5C29E1BD11A4173BB7B4ED1 /* libPods-MobileFTSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95CF76D8BFC4012B31CB51D /* libPods-MobileFTSDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +78,6 @@
 		0E661F9719E06762004CB26C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0E661F9D19E06762004CB26C /* MobileFTSDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileFTSDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E661FA219E06762004CB26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E661FA319E06762004CB26C /* MobileFTSDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileFTSDemoTests.m; sourceTree = "<group>"; };
 		0E661FB619E07048004CB26C /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		0E661FB719E07048004CB26C /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		0E661FBC19E08266004CB26C /* FTSActionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSActionData.h; sourceTree = "<group>"; };
@@ -125,7 +128,13 @@
 		0E66200619E08275004CB26C /* kafka.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kafka.txt; sourceTree = "<group>"; };
 		0E66200719E08275004CB26C /* pangram.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pangram.txt; sourceTree = "<group>"; };
 		0E66200819E08275004CB26C /* werther.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = werther.txt; sourceTree = "<group>"; };
+		0EA4484519F3F38500FB70C4 /* FTSDocumentHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSDocumentHandlerTests.m; sourceTree = "<group>"; };
+		0EA4484619F3F38500FB70C4 /* FTSQueryPreprocessorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSQueryPreprocessorTests.m; sourceTree = "<group>"; };
+		0EA4484A19F3F48400FB70C4 /* FTSExtractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSExtractorTests.m; sourceTree = "<group>"; };
+		0EA4486219F4028C00FB70C4 /* books.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = books.xml; sourceTree = "<group>"; };
+		329534BCED9A48A99BD67C12 /* libPods-MobileFTSDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFTSDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFTSDemo.xcconfig"; path = "Pods/Pods-MobileFTSDemo.xcconfig"; sourceTree = "<group>"; };
+		6BDDFA5D4D7641A084157CFD /* Pods-MobileFTSDemoTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFTSDemoTests.xcconfig"; path = "Pods/Pods-MobileFTSDemoTests.xcconfig"; sourceTree = "<group>"; };
 		B95CF76D8BFC4012B31CB51D /* libPods-MobileFTSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFTSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				347ACDC0F2DC4602AA02C32A /* libPods-MobileFTSDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +166,7 @@
 				0E661F8219E06762004CB26C /* Products */,
 				484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */,
 				509C482C0DF644568D0F552E /* Frameworks */,
+				6BDDFA5D4D7641A084157CFD /* Pods-MobileFTSDemoTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,7 +213,9 @@
 		0E661FA019E06762004CB26C /* MobileFTSDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E661FA319E06762004CB26C /* MobileFTSDemoTests.m */,
+				0EA4484A19F3F48400FB70C4 /* FTSExtractorTests.m */,
+				0EA4484519F3F38500FB70C4 /* FTSDocumentHandlerTests.m */,
+				0EA4484619F3F38500FB70C4 /* FTSQueryPreprocessorTests.m */,
 				0E661FA119E06762004CB26C /* Supporting Files */,
 			);
 			path = MobileFTSDemoTests;
@@ -362,6 +375,7 @@
 		0E66200919E08275004CB26C /* xml */ = {
 			isa = PBXGroup;
 			children = (
+				0EA4486219F4028C00FB70C4 /* books.xml */,
 			);
 			path = xml;
 			sourceTree = "<group>";
@@ -370,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				B95CF76D8BFC4012B31CB51D /* libPods-MobileFTSDemo.a */,
+				329534BCED9A48A99BD67C12 /* libPods-MobileFTSDemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -400,9 +415,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E661FAA19E06762004CB26C /* Build configuration list for PBXNativeTarget "MobileFTSDemoTests" */;
 			buildPhases = (
+				A2CE6F1DAAEC47E6B0D6F127 /* Check Pods Manifest.lock */,
 				0E661F9919E06762004CB26C /* Sources */,
 				0E661F9A19E06762004CB26C /* Frameworks */,
 				0E661F9B19E06762004CB26C /* Resources */,
+				C848B9FDEC9540EFAB74F48F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -467,6 +484,7 @@
 				0E66200C19E08275004CB26C /* example.pdf in Resources */,
 				0E661F9519E06762004CB26C /* Images.xcassets in Resources */,
 				0E66200A19E08275004CB26C /* css_zen_garden.html in Resources */,
+				0EA4486319F4028C00FB70C4 /* books.xml in Resources */,
 				0E66201019E08275004CB26C /* pangram.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +499,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A2CE6F1DAAEC47E6B0D6F127 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		C63CC2426708477ABB49D4D4 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,6 +527,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-MobileFTSDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C848B9FDEC9540EFAB74F48F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MobileFTSDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F71E7B9C0D534175975AA0EE /* Check Pods Manifest.lock */ = {
@@ -550,7 +598,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E661FA419E06762004CB26C /* MobileFTSDemoTests.m in Sources */,
+				0EA4484B19F3F48400FB70C4 /* FTSExtractorTests.m in Sources */,
+				0EA4484819F3F38500FB70C4 /* FTSDocumentHandlerTests.m in Sources */,
+				0EA4484919F3F38500FB70C4 /* FTSQueryPreprocessorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +732,7 @@
 		};
 		0E661FAB19E06762004CB26C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BDDFA5D4D7641A084157CFD /* Pods-MobileFTSDemoTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -701,6 +752,7 @@
 		};
 		0E661FAC19E06762004CB26C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BDDFA5D4D7641A084157CFD /* Pods-MobileFTSDemoTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

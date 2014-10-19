@@ -26,7 +26,7 @@ extern double_t const searchDelayInSeconds;
 
 // Queries
 extern NSString* const createDatabaseQuery;
-extern NSString* const killDatabaseQuery;
+extern NSString* const dropTableDatabaseQuery;
 extern NSString* const cleanDatabaseQuery;
 
 extern NSString* const addDocumentQuery;
