@@ -90,16 +90,50 @@ All SQL Queries and further Configurations can be adapted here if needed.
 
 --------------------------
 
-##<a id="dependencies" name="dependencies"></a>Dependenies
+##<a id="dependencies" name="dependencies"></a>Cocoapods Dependenies
 
-**TODO**
-Visual Dependencies on Cocoapods
+<img src="https://www.dropbox.com/s/udogxivuwwm7hu0/fts_cocoa_dependencies.png">
+https://www.dropbox.com/s/f20azfxo5cnybty/fts_class_diagram.png
 
 --------------------------
 
 ##<a id="under-the-hood" name="under-the-hood"></a>Under the Hood
 
-**TODO**
-- Features
-- How it works
-- Class Diagram
+**How it works**
+
+- FTSDocumentHandler
+  Is the entry point for the use of the fulltext search. With the help of the FTSActions (FTSAddDocumentAction, FTSRemoveDocumentAction, FTSFindDocumentAction) it has complete access to all the needed operations on the document index. The delegate that can be passed will be forwarded to the specific actions, so the callback via delegate can be handled properly because all calls are asynchronous.
+- FTSAddDocumentAction
+  Adds or updates (if the document is already part of the index) the content of a document to the index. The content (including the metadata like filetype) will be parsed and extracted by the Extractor construct. It will notify the delegate if the operation was completed successfully or not.
+- FTSContentExtractor
+  Provides the ability to parse documents and extract the content and the metadata. Thanks to its subclasses, the following file formats can successfully processed:
+    PDF
+    XML
+    HTML
+    JSON
+    Plaintext
+  If a certain file format is unknown, it will be treated as plaintext.
+- FTSRemoveDocumentAction
+  Removes an existing document from the index and notifies the delegate if the operation was completed successfully or not.
+- FTSFindDocumentAction
+  Takes the search input and generates a database query. All found documents will be returned to the delegate.
+- FTSQueryProcessor
+  With the FTSQueryProcessor we have the ability to process / enhance the search input before the database query will be generated. The Default behaviour is, that after each word (separated by space) the wildcard character '*' will be added.
+- FTSDatabaseHandler
+  Provides basic database funtionality such as setting up the db queue and locks.
+
+**Restrictions**
+Currently the content extraction regarding PDF is very minimalistic and simple. This approach has been chosen to avoid a dependency
+on a big fat PDF Library from which only one small functionality would be used (Text parsing / extraction). But it seems inevitable as a next step. Latex generated documents for example have currently no chance to be indexed correctly at all.
+
+**Class Diagram**
+
+<img src="https://www.dropbox.com/s/f20azfxo5cnybty/fts_class_diagram.png">
+
+--------------------------
+
+##<a id="next-steps" name="next-steps"></a>Next Steps
+
+- Turn into a Cocoapod
+- Heavy Refactoring for Facets
+- Add reliable PDF content extraction
