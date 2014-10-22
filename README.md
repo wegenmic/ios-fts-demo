@@ -92,8 +92,7 @@ All SQL Queries and further Configurations can be adapted here if needed.
 
 ##<a id="dependencies" name="dependencies"></a>Cocoapods Dependenies
 
-<img src="https://www.dropbox.com/s/udogxivuwwm7hu0/fts_cocoa_dependencies.png">
-https://www.dropbox.com/s/f20azfxo5cnybty/fts_class_diagram.png
+<img src="https://photos-1.dropbox.com/t/1/AAC-fR5FLXzoaGDL-AX3QldZ1d-5FuwK3f5B1ngIH-Uuvg/12/33153087/png/1024x768/3/1414000800/0/2/fts_cocoa_dependencies.png/cey1rnxPBL5dMB7UvrYVN5qeJTR6wVEOqdV1nLkxsDk">
 
 --------------------------
 
@@ -101,11 +100,11 @@ https://www.dropbox.com/s/f20azfxo5cnybty/fts_class_diagram.png
 
 **How it works**
 
-- FTSDocumentHandler
+- **FTSDocumentHandler**
   Is the entry point for the use of the fulltext search. With the help of the FTSActions (FTSAddDocumentAction, FTSRemoveDocumentAction, FTSFindDocumentAction) it has complete access to all the needed operations on the document index. The delegate that can be passed will be forwarded to the specific actions, so the callback via delegate can be handled properly because all calls are asynchronous.
-- FTSAddDocumentAction
+- **FTSAddDocumentAction**
   Adds or updates (if the document is already part of the index) the content of a document to the index. The content (including the metadata like filetype) will be parsed and extracted by the Extractor construct. It will notify the delegate if the operation was completed successfully or not.
-- FTSContentExtractor
+- **FTSContentExtractor**
   Provides the ability to parse documents and extract the content and the metadata. Thanks to its subclasses, the following file formats can successfully processed:
     PDF
     XML
@@ -113,13 +112,13 @@ https://www.dropbox.com/s/f20azfxo5cnybty/fts_class_diagram.png
     JSON
     Plaintext
   If a certain file format is unknown, it will be treated as plaintext.
-- FTSRemoveDocumentAction
+- **FTSRemoveDocumentAction**
   Removes an existing document from the index and notifies the delegate if the operation was completed successfully or not.
-- FTSFindDocumentAction
+- **FTSFindDocumentAction**
   Takes the search input and generates a database query. All found documents will be returned to the delegate.
-- FTSQueryProcessor
+- **FTSQueryProcessor**
   With the FTSQueryProcessor we have the ability to process / enhance the search input before the database query will be generated. The Default behaviour is, that after each word (separated by space) the wildcard character '*' will be added.
-- FTSDatabaseHandler
+- **FTSDatabaseHandler**
   Provides basic database funtionality such as setting up the db queue and locks.
 
 **Restrictions**
@@ -128,7 +127,7 @@ on a big fat PDF Library from which only one small functionality would be used (
 
 **Class Diagram**
 
-<img src="https://www.dropbox.com/s/f20azfxo5cnybty/fts_class_diagram.png">
+<img src="https://photos-5.dropbox.com/t/1/AADHd3Zm89jhormfErPQ-ECYXQu8kcOOB1Gh_J2eAPQOMg/12/33153087/png/1024x768/3/1414000800/0/2/fts_class_diagram.png/dbqk2DlaAFspVBcKEwKMdFEigv6zjDrJNFtKKZznfe0">
 
 --------------------------
 
