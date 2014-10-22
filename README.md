@@ -122,6 +122,7 @@ All SQL Queries and further Configurations can be adapted here if needed.
   Provides basic database funtionality such as setting up the db queue and locks.
 
 **Restrictions**
+
 Currently the content extraction regarding PDF is very minimalistic and simple. This approach has been chosen to avoid a dependency
 on a big fat PDF Library from which only one small functionality would be used (Text parsing / extraction). But it seems inevitable as a next step. Latex generated documents for example have currently no chance to be indexed correctly at all.
 
