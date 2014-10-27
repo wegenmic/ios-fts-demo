@@ -121,6 +121,12 @@
     self.navigationItem.rightBarButtonItem = cancelButton;
 }
 
+- (void)displayGlobalMessage:(NSString*)message withTitle:(NSString *)title
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+
 - (void)loadDocumentsFromIndex
 {
     [_indexedDocumentHandler findDocuments:[self.searchBar text]];
@@ -151,12 +157,6 @@
     
     self.addDocumentTextField.text = @"";
     [self displaySearchBar];
-}
-
-- (void)displayGlobalMessage:(NSString*)message withTitle:(NSString *)title
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
 }
 
 - (NSArray *)separateComponents:(NSString *)input byLastOccurrence:(NSString *)delimiter {
