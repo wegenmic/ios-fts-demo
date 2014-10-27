@@ -39,11 +39,11 @@
     
     if ([self documentExists:input.filename inDatabase:input.database]) {
         // UPDATE - document exists.
-        success = [input.database executeUpdate:[NSString stringWithFormat:updateDocumentQuery, tableName], metadata, content, input.filename,  nil];
+        success = [input.database executeUpdate:[NSString stringWithFormat:UPDATE_DOCUMENT_QUERY, TABLE_NAME], metadata, content, input.filename,  nil];
         [self notifyUpdateDelegate:success forDocument:input.originDocumentPath];
     } else {
         // ADD - document does not exist yet.
-        success = [input.database executeUpdate:[NSString stringWithFormat:addDocumentQuery, tableName], input.filename, metadata, content, nil];
+        success = [input.database executeUpdate:[NSString stringWithFormat:ADD_DOCUMENT_QUERY, TABLE_NAME], input.filename, metadata, content, nil];
         [self notifyAddDelegate:success forDocument:input.originDocumentPath];
     }
 }

@@ -32,15 +32,15 @@
     FMResultSet *rs;
     if([input.query length] == 0) {
         // search for all documents in index when there is an empty input query
-        rs = [input.database executeQuery:[NSString stringWithFormat:findAllDocumentsQuery, tableName]];
+        rs = [input.database executeQuery:[NSString stringWithFormat:FIND_ALL_DOCUMENTS_QUERY, TABLE_NAME]];
     } else {
-        rs = [input.database executeQuery:[NSString stringWithFormat:findDocumentByContentQuery, tableName], input.query, nil];
+        rs = [input.database executeQuery:[NSString stringWithFormat:FIND_DOCUMENTS_BY_CONTENT_QUERY, TABLE_NAME], input.query, nil];
     }
     
     NSString *documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     
     while ([rs next]) {
-        NSString *filename = [rs stringForColumn:tableIdColumn];
+        NSString *filename = [rs stringForColumn:TABLE_ID_COLUMN];
         NSString *documentPath = [documentsDir stringByAppendingPathComponent:filename];
         NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
         if(documentUrl != nil) {

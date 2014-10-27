@@ -18,8 +18,8 @@
     self.lastSearchQuery = query;
     
     // add execution delay for 1.0s if the search query has 3 or less characters
-    double_t delay = searchDelayInSeconds;
-	if ([query length] > delayedSearchQueryLength) {
+    double_t delay = SEARCH_DELAY_IN_SECONDS;
+	if ([query length] > DELAYED_SEARCH_QUERY_LENGTH) {
 		delay = 0.0;
 	}
 	dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
@@ -46,7 +46,7 @@
     NSMutableString *queryWithFacets = [[NSMutableString alloc] init];
     
     for (NSString *facet in facets) {
-        [queryWithFacets appendFormat:@"%@:%@ ", tableMetadataColumn, facet];
+        [queryWithFacets appendFormat:@"%@:%@ ", TABLE_METADATA_COLUMN, facet];
     }
     
     [queryWithFacets appendString:query];

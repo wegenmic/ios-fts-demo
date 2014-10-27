@@ -13,28 +13,30 @@
 
 #pragma mark - database
 
-NSString* const databasePath = @"UserDatabase.sqlite";
-NSString* const tableName = @"nfsdocuments";
-NSString* const tableIdColumn = @"path";
-NSString* const tableMetadataColumn = @"keywords";
-NSString* const tableContentColumn = @"content";
+NSString* const DATABASE_PATH = @"UserDatabase.sqlite";
+NSString* const TABLE_NAME = @"nfsdocuments";
+NSString* const TABLE_ID_COLUMN = @"path";
+NSString* const TABLE_METADATA_COLUMN = @"keywords";
+NSString* const TABLE_CONTENT_COLUMN = @"content";
 
 
 #pragma mark - document search
-NSUInteger const delayedSearchQueryLength = 3;
-double_t const searchDelayInSeconds = 1.0;
+
+NSUInteger const DELAYED_SEARCH_QUERY_LENGTH = 3;
+double_t const SEARCH_DELAY_IN_SECONDS = 1.0;
 
 
 #pragma mark - database queries
-NSString* const createDatabaseQuery = @"CREATE VIRTUAL TABLE IF NOT EXISTS %@ USING fts4(path, keywords, content)";
-NSString* const dropTableDatabaseQuery = @"DROP TABLE %@";
-NSString* const cleanDatabaseQuery = @"DELETE FROM %@";
 
-NSString* const addDocumentQuery = @"INSERT INTO %@(path, keywords, content) VALUES(?, ?, ?)";
-NSString* const updateDocumentQuery = @"UPDATE %@ SET keywords = ?, content = ? WHERE path = ?";
-NSString* const removeDocumentQuery = @"DELETE FROM %@ WHERE path = ?";
-NSString* const findAllDocumentsQuery = @"SELECT path FROM %@";
-NSString* const findDocumentByContentQuery = @"SELECT path FROM %@ WHERE content MATCH ?";
-NSString* const findDocumentByPathQuery = @"SELECT path FROM %@ WHERE path = ?";
+NSString* const CREATE_DATABASE_QUERY = @"CREATE VIRTUAL TABLE IF NOT EXISTS %@ USING fts4(path, keywords, content)";
+NSString* const DROP_TABLE_DATABASE_QUERY = @"DROP TABLE %@";
+NSString* const CLEAN_DATABASE_QUERY = @"DELETE FROM %@";
+
+NSString* const ADD_DOCUMENT_QUERY = @"INSERT INTO %@(path, keywords, content) VALUES(?, ?, ?)";
+NSString* const UPDATE_DOCUMENT_QUERY = @"UPDATE %@ SET keywords = ?, content = ? WHERE path = ?";
+NSString* const REMOVE_DOCUMENT_QUERY = @"DELETE FROM %@ WHERE path = ?";
+NSString* const FIND_ALL_DOCUMENTS_QUERY = @"SELECT path FROM %@";
+NSString* const FIND_DOCUMENTS_BY_CONTENT_QUERY = @"SELECT path FROM %@ WHERE content MATCH ?";
+NSString* const FIND_DOCUMENT_BY_PATH_QUERY = @"SELECT path FROM %@ WHERE path = ?";
 
 @end

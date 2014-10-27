@@ -24,7 +24,7 @@
 }
 
 - (instancetype)init {
-    self.workingDatabasePath = databasePath;
+    self.workingDatabasePath = DATABASE_PATH;
     [self prepareDatabaseConnection];
     [self prepareDatabase];
     return self;
@@ -55,7 +55,7 @@
         [_queue inDatabase:^(FMDatabase *database) {
             NSLog(@"Start preparing FTS DB...");
             // Create DB Table if it doesn't exist.
-            BOOL success = [database executeUpdate:[NSString stringWithFormat:createDatabaseQuery, tableName]];
+            BOOL success = [database executeUpdate:[NSString stringWithFormat:CREATE_DATABASE_QUERY, TABLE_NAME]];
             
             if(success) {
                 NSLog(@"Finished Preparing FTS DB");
@@ -75,7 +75,7 @@
         [_writeQueueLock lock];
         [_queue inDatabase:^(FMDatabase *database) {
             NSLog(@"Cleanup FTS DB");
-            [database executeUpdate:[NSString stringWithFormat:dropTableDatabaseQuery, tableName]];
+            [database executeUpdate:[NSString stringWithFormat:DROP_TABLE_DATABASE_QUERY, TABLE_NAME]];
         }];
         [_writeQueueLock unlock];
     }];
@@ -87,7 +87,7 @@
         [_writeQueueLock lock];
         [_queue inDatabase:^(FMDatabase *database) {
             NSLog(@"Remove all documents from FTS DB");
-            [database executeUpdate:[NSString stringWithFormat:cleanDatabaseQuery, tableName], nil];
+            [database executeUpdate:[NSString stringWithFormat:CLEAN_DATABASE_QUERY, TABLE_NAME], nil];
         }];
         [_writeQueueLock unlock];
     }];
@@ -110,7 +110,7 @@
 - (void)copyDatabaseIfNeeded:(NSString *)targetDbPath
 {
     NSString *documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *defaultDbPath = [documentsDir stringByAppendingPathComponent:databasePath];
+    NSString *defaultDbPath = [documentsDir stringByAppendingPathComponent:DATABASE_PATH];
 
     NSURL *sourceUrl = [NSURL URLWithString:defaultDbPath];
     NSURL *targetUrl = [NSURL URLWithString:targetDbPath];

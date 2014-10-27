@@ -50,7 +50,7 @@
 }
 
 - (BOOL)documentExists:(NSString *)filename inDatabase:(FMDatabase *)database {
-    FMResultSet *rs = [database executeQuery:[NSString stringWithFormat:findDocumentByPathQuery, tableName], filename, nil];
+    FMResultSet *rs = [database executeQuery:[NSString stringWithFormat:FIND_DOCUMENT_BY_PATH_QUERY, TABLE_NAME], filename, nil];
     BOOL exists = [rs next];
     [rs close];
     return exists;
