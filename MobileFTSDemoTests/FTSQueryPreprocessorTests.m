@@ -28,7 +28,7 @@
     NSString *query = @"Test Query";
     FTSQueryPreprocessor *processor = [[FTSQueryPreprocessor alloc] init];
     NSString *processedQuery = [processor processQuery:query];
-    XCTAssert([processedQuery isEqualToString:@"Test* Query* "], @"Pass");
+    XCTAssert([processedQuery isEqualToString:@"Test* Query*"], @"Pass");
 }
 
 - (void)testShouldProcessEmptyQuery {
