@@ -101,15 +101,17 @@
     }
 }
 
+// If the database that should be used is not the default database, then it will be copied from the default database to the required one.
+// Is currently used only for testing.
 - (void)copyDatabaseIfNeeded:(NSString *)targetDbPath
 {
     NSString *documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *originDbPath = [documentsDir stringByAppendingPathComponent:databasePath];
+    NSString *defaultDbPath = [documentsDir stringByAppendingPathComponent:databasePath];
 
-    NSURL *sourceUrl = [NSURL URLWithString:originDbPath];
+    NSURL *sourceUrl = [NSURL URLWithString:defaultDbPath];
     NSURL *targetUrl = [NSURL URLWithString:targetDbPath];
     
-    if([originDbPath isEqualToString:targetDbPath]) {
+    if([defaultDbPath isEqualToString:targetDbPath]) {
         return;
     }
     
