@@ -45,29 +45,8 @@
 
 - (NSString *)retrieveContentFromDocument:(NSURL *)documentPath {
     
-    NSString *content;
-    
-    // TODO refactor with configurable Map<filetype,classInstanceToUse>
-    NSString *pathExtension = [[documentPath absoluteURL] pathExtension];
-    if ([pathExtension isEqualToString:@"xml"]) {
-        content = [[[FTSXmlContentExtractor alloc] initWithDocumentPath:documentPath] extractContent];
-    }
-    else if ([pathExtension isEqualToString:@"xhtml"]) {
-        content = [[[FTSXmlContentExtractor alloc] initWithDocumentPath:documentPath] extractContent];
-    }
-    else if ([pathExtension isEqualToString:@"html"]) {
-        content = [[[FTSHtmlContentExtractor alloc] initWithDocumentPath:documentPath] extractContent];
-    }
-    else if ([pathExtension isEqualToString:@"json"]) {
-        content = [[[FTSJsonContentExtractor alloc] initWithDocumentPath:documentPath] extractContent];
-    }
-    else if ([pathExtension isEqualToString:@"pdf"]) {
-        content = [[[FTSPdfContentExtractor alloc] initWithDocumentPath:documentPath] extractContent];
-    }
-    else
-    {
-        content = [[[FTSDefaultContentExtractor alloc] initWithDocumentPath:documentPath] extractContent];
-    }
+    FTSContentExtractor *extractor = [self retrieveContentExtractorFromDocumentPath:documentPath];
+    NSString *content = [extractor extractContent];
     
     NSLog(@"Extracted Content from Document [%@]: [%@]", documentPath, content);
     return content;
@@ -75,32 +54,35 @@
 
 - (NSString *)retrieveMetadataFromDocument:(NSURL *)documentPath {
     
-    NSString *metadata;
-    
-    // TODO refactor with configurable Map<filetype,classInstanceToUse>
-    NSString *pathExtension = [[documentPath absoluteURL] pathExtension];
-    if ([pathExtension isEqualToString:@"xml"]) {
-        metadata = [[[FTSXmlContentExtractor alloc] initWithDocumentPath:documentPath] extractMetadata];
-    }
-    else if ([pathExtension isEqualToString:@"xhtml"]) {
-        metadata = [[[FTSXmlContentExtractor alloc] initWithDocumentPath:documentPath] extractMetadata];
-    }
-    else if ([pathExtension isEqualToString:@"html"]) {
-        metadata = [[[FTSHtmlContentExtractor alloc] initWithDocumentPath:documentPath] extractMetadata];
-    }
-    else if ([pathExtension isEqualToString:@"json"]) {
-        metadata = [[[FTSJsonContentExtractor alloc] initWithDocumentPath:documentPath] extractMetadata];
-    }
-    else if ([pathExtension isEqualToString:@"pdf"]) {
-        metadata = [[[FTSPdfContentExtractor alloc] initWithDocumentPath:documentPath] extractMetadata];
-    }
-    else
-    {
-        metadata = [[[FTSDefaultContentExtractor alloc] initWithDocumentPath:documentPath] extractMetadata];
-    }
+    FTSContentExtractor *extractor = [self retrieveContentExtractorFromDocumentPath:documentPath];
+    NSString *metadata = [extractor extractMetadata];
     
     NSLog(@"Extracted Metadata from Document [%@]: [%@]", documentPath, metadata);
     return metadata;
+}
+
+- (FTSContentExtractor *)retrieveContentExtractorFromDocumentPath:(NSURL *)documentPath {
+    NSString *pathExtension = [[documentPath absoluteURL] pathExtension];
+    
+    if ([pathExtension isEqualToString:@"xml"]) {
+        return [[FTSXmlContentExtractor alloc] initWithDocumentPath:documentPath];
+    }
+    else if ([pathExtension isEqualToString:@"xhtml"]) {
+        return [[FTSXmlContentExtractor alloc] initWithDocumentPath:documentPath];
+    }
+    else if ([pathExtension isEqualToString:@"html"]) {
+        return [[FTSHtmlContentExtractor alloc] initWithDocumentPath:documentPath];
+    }
+    else if ([pathExtension isEqualToString:@"json"]) {
+        return [[FTSJsonContentExtractor alloc] initWithDocumentPath:documentPath];
+    }
+    else if ([pathExtension isEqualToString:@"pdf"]) {
+        return [[FTSPdfContentExtractor alloc] initWithDocumentPath:documentPath];
+    }
+    else
+    {
+        return [[FTSDefaultContentExtractor alloc] initWithDocumentPath:documentPath];
+    }
 }
 
 - (BOOL)documentExists:(NSString *)filename inDatabase:(FMDatabase *)database {
