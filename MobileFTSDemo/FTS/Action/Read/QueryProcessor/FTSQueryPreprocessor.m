@@ -20,8 +20,12 @@
             [modifiedQuery appendFormat:@"%@%@ ", token, wildcard];
         }
     }
-    // TODO remove last character (space)?
     
+    if(modifiedQuery.length > 0) {
+        // remove last character (space)
+        return [modifiedQuery substringToIndex:[modifiedQuery length]-1];
+    }
+
     return modifiedQuery;
 }
 
