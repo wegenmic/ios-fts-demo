@@ -92,7 +92,7 @@ All SQL Queries and further Configurations can be adapted here if needed.
 
 ##<a id="dependencies" name="dependencies"></a>Cocoapods Dependenies
 
-<img src="https://photos-1.dropbox.com/t/1/AAC-fR5FLXzoaGDL-AX3QldZ1d-5FuwK3f5B1ngIH-Uuvg/12/33153087/png/1024x768/3/1414000800/0/2/fts_cocoa_dependencies.png/cey1rnxPBL5dMB7UvrYVN5qeJTR6wVEOqdV1nLkxsDk">
+<img src="/document/fts_cocoa_dependencies.png?raw=true">
 
 --------------------------
 
@@ -128,7 +128,7 @@ on a big fat PDF Library from which only one small functionality would be used (
 
 **Class Diagram**
 
-<img src="https://photos-5.dropbox.com/t/1/AADHd3Zm89jhormfErPQ-ECYXQu8kcOOB1Gh_J2eAPQOMg/12/33153087/png/1024x768/3/1414000800/0/2/fts_class_diagram.png/dbqk2DlaAFspVBcKEwKMdFEigv6zjDrJNFtKKZznfe0">
+<img src="/document/fts_class_diagram.png?raw=true">
 
 --------------------------
 
