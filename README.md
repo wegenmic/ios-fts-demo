@@ -92,7 +92,7 @@ All SQL Queries and further Configurations can be adapted here if needed.
 
 ##<a id="dependencies" name="dependencies"></a>Cocoapods Dependenies
 
-<img src="/document/fts_cocoa_dependencies.png?raw=true">
+<img src="/documentation/fts_cocoa_dependencies.png?raw=true">
 
 --------------------------
 
@@ -128,7 +128,7 @@ on a big fat PDF Library from which only one small functionality would be used (
 
 **Class Diagram**
 
-<img src="/document/fts_class_diagram.png?raw=true">
+<img src="/documentation/fts_class_diagram.png?raw=true">
 
 --------------------------
 
