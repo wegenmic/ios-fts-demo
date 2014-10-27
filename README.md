@@ -51,7 +51,6 @@ Now you are ready to run the project.
 1. Copy everything within the FTS folder into your Project (simply every Class with the **FTS** Prefix)
 2. Add Cocoapods Dependencies. Currently:
   - pod 'FMDB', '2.3'
-  - pod 'sqlite3', '3.8.4.3'
   - pod 'hpple', '0.2.0'
 3. Use it as described in the following chapter
 

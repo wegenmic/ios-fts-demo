@@ -132,9 +132,11 @@
 		0EA4484619F3F38500FB70C4 /* FTSQueryPreprocessorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSQueryPreprocessorTests.m; sourceTree = "<group>"; };
 		0EA4484A19F3F48400FB70C4 /* FTSExtractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSExtractorTests.m; sourceTree = "<group>"; };
 		0EA4486219F4028C00FB70C4 /* books.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = books.xml; sourceTree = "<group>"; };
+		31F588284EC539E37318D6E9 /* Pods-MobileFTSDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFTSDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFTSDemoTests/Pods-MobileFTSDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		329534BCED9A48A99BD67C12 /* libPods-MobileFTSDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFTSDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFTSDemo.xcconfig"; path = "Pods/Pods-MobileFTSDemo.xcconfig"; sourceTree = "<group>"; };
-		6BDDFA5D4D7641A084157CFD /* Pods-MobileFTSDemoTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFTSDemoTests.xcconfig"; path = "Pods/Pods-MobileFTSDemoTests.xcconfig"; sourceTree = "<group>"; };
+		5B5DD6CDCA93BD87E6E09AE0 /* Pods-MobileFTSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFTSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFTSDemo/Pods-MobileFTSDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7ED5953F22DFAB7398DA59C2 /* Pods-MobileFTSDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFTSDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFTSDemoTests/Pods-MobileFTSDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		9BAA2B53E18B46A8D30EBA41 /* Pods-MobileFTSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFTSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFTSDemo/Pods-MobileFTSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B95CF76D8BFC4012B31CB51D /* libPods-MobileFTSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFTSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,9 +166,8 @@
 				0E661F8319E06762004CB26C /* MobileFTSDemo */,
 				0E661FA019E06762004CB26C /* MobileFTSDemoTests */,
 				0E661F8219E06762004CB26C /* Products */,
-				484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */,
 				509C482C0DF644568D0F552E /* Frameworks */,
-				6BDDFA5D4D7641A084157CFD /* Pods-MobileFTSDemoTests.xcconfig */,
+				514C33B70CE56DF1389D19B9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -389,6 +390,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		514C33B70CE56DF1389D19B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BAA2B53E18B46A8D30EBA41 /* Pods-MobileFTSDemo.debug.xcconfig */,
+				5B5DD6CDCA93BD87E6E09AE0 /* Pods-MobileFTSDemo.release.xcconfig */,
+				31F588284EC539E37318D6E9 /* Pods-MobileFTSDemoTests.debug.xcconfig */,
+				7ED5953F22DFAB7398DA59C2 /* Pods-MobileFTSDemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,7 +538,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MobileFTSDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileFTSDemo/Pods-MobileFTSDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C848B9FDEC9540EFAB74F48F /* Copy Pods Resources */ = {
@@ -541,7 +553,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MobileFTSDemoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileFTSDemoTests/Pods-MobileFTSDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F71E7B9C0D534175975AA0EE /* Check Pods Manifest.lock */ = {
@@ -651,7 +663,9 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"$(inherited)",
+					SQLITE_ENABLE_FTS3,
+					SQLITE_ENABLE_FTS3_PARENTHESIS,
+					SQLITE_DEBUG,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -690,6 +704,10 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					SQLITE_ENABLE_FTS3,
+					SQLITE_ENABLE_FTS3_PARENTHESIS,
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -706,7 +724,7 @@
 		};
 		0E661FA819E06762004CB26C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */;
+			baseConfigurationReference = 9BAA2B53E18B46A8D30EBA41 /* Pods-MobileFTSDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobileFTSDemo/Info.plist;
@@ -719,7 +737,7 @@
 		};
 		0E661FA919E06762004CB26C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 484236EC31904E0F914E19F1 /* Pods-MobileFTSDemo.xcconfig */;
+			baseConfigurationReference = 5B5DD6CDCA93BD87E6E09AE0 /* Pods-MobileFTSDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobileFTSDemo/Info.plist;
@@ -732,7 +750,7 @@
 		};
 		0E661FAB19E06762004CB26C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BDDFA5D4D7641A084157CFD /* Pods-MobileFTSDemoTests.xcconfig */;
+			baseConfigurationReference = 31F588284EC539E37318D6E9 /* Pods-MobileFTSDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -752,7 +770,7 @@
 		};
 		0E661FAC19E06762004CB26C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BDDFA5D4D7641A084157CFD /* Pods-MobileFTSDemoTests.xcconfig */;
+			baseConfigurationReference = 7ED5953F22DFAB7398DA59C2 /* Pods-MobileFTSDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
