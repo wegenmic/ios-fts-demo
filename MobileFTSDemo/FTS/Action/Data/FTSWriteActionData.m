@@ -21,6 +21,7 @@
     NSString *newDocumentPath = [documentsFolder stringByAppendingPathComponent:[documentPath lastPathComponent]];
     self.targetDocumentPath = [NSURL fileURLWithPath:newDocumentPath];
     if([self.targetDocumentPath isEqual:documentPath]) {
+        // do not copy if the document is already in the documents folder
         return [documentPath lastPathComponent];
     }
     
