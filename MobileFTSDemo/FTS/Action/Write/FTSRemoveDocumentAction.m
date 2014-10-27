@@ -23,6 +23,9 @@
     return _shareFTSRemoveDocumentAction;
 }
 
+
+#pragma mark - public
+
 - (void)action:(FTSWriteActionData *)input {
     BOOL success = [input.database executeUpdate:[NSString stringWithFormat:removeDocumentQuery, tableName], input.filename, nil];
     if(success) {
@@ -32,6 +35,16 @@
     [self notifyDelegate:success forDocument:input.originDocumentPath];
 }
 
+
+#pragma mark - private
+
+-(NSString *)actionName {
+    return @"Remove";
+}
+
+
+#pragma mark - FTSRemoveDocumentActionDelegate
+
 - (void)notifyDelegate:(BOOL)success forDocument:(NSURL *)documentPath {
     if (success && [self.delegate respondsToSelector:@selector(ftsDocumentAction:didRemoveDocument:)]) {
         [self.delegate ftsDocumentAction:self didRemoveDocument:documentPath];
@@ -40,10 +53,6 @@
     if (!success && [self.delegate respondsToSelector:@selector(ftsDocumentAction:didFailRemovingDocument:)]) {
         [self.delegate ftsDocumentAction:self didFailRemovingDocument:documentPath];
     }
-}
-
--(NSString *)actionName {
-    return @"Remove";
 }
 
 @end

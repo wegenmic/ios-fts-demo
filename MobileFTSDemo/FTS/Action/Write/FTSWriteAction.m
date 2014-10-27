@@ -16,6 +16,9 @@
 
 @implementation FTSWriteAction
 
+
+#pragma mark - public
+
 - (void)write:(NSURL *)documentPath {
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         NSDate *start = [NSDate date];
@@ -39,9 +42,22 @@
                 format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
 }
 
+
+#pragma mark - private
+
 -(NSString *)actionName {
     return @"Write";
 }
+
+- (BOOL)documentExists:(NSString *)filename inDatabase:(FMDatabase *)database {
+    FMResultSet *rs = [database executeQuery:[NSString stringWithFormat:findDocumentByPathQuery, tableName], filename, nil];
+    BOOL exists = [rs next];
+    [rs close];
+    return exists;
+}
+
+
+#pragma mark - content retrieval
 
 - (NSString *)retrieveContentFromDocument:(NSURL *)documentPath {
     
@@ -83,13 +99,6 @@
     {
         return [[FTSDefaultContentExtractor alloc] initWithDocumentPath:documentPath];
     }
-}
-
-- (BOOL)documentExists:(NSString *)filename inDatabase:(FMDatabase *)database {
-    FMResultSet *rs = [database executeQuery:[NSString stringWithFormat:findDocumentByPathQuery, tableName], filename, nil];
-    BOOL exists = [rs next];
-    [rs close];
-    return exists;
 }
 
 @end

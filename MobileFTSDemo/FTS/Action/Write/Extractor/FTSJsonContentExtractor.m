@@ -10,10 +10,21 @@
 
 @implementation FTSJsonContentExtractor
 
+
+#pragma mark - public
+
 -(NSString *)extractContent {
     NSArray *parsedData = [NSJSONSerialization JSONObjectWithData:self.data options:0 error:nil];
     return [self parseJsonArray:parsedData];
 }
+
+-(NSString *)extractMetadata {
+    // TODO anything else to add?
+    return [[NSString alloc] initWithFormat:@"filetype_%@", [self.documentPath pathExtension]];
+}
+
+
+#pragma mark - private
 
 -(NSString *)parseJsonDict:(NSDictionary *)dict {
     NSMutableString *content = [[NSMutableString alloc] init];
@@ -43,11 +54,6 @@
         content = [NSString stringWithFormat:@"%@ ", (NSString *)object];
     }
     return content;
-}
-
--(NSString *)extractMetadata {
-    // TODO anything else to add?
-    return [[NSString alloc] initWithFormat:@"filetype_%@", [self.documentPath pathExtension]];
 }
 
 @end

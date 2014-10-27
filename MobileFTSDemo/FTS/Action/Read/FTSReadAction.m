@@ -11,6 +11,9 @@
 
 @implementation FTSReadAction
 
+
+#pragma mark - public
+
 - (void)find:(NSString *)query {
     self.lastSearchQuery = query;
     
@@ -50,14 +53,19 @@
     [self find:queryWithFacets];
 }
 
+
+#pragma mark - public abstract
+
 - (void)action:(FTSReadActionData *)input {
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
 }
 
+
+#pragma mark - private
+
 -(NSString *)actionName {
     return @"Read";
 }
-
 
 @end

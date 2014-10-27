@@ -10,6 +10,9 @@
 
 @implementation FTSDefaultContentExtractor
 
+
+#pragma mark - public
+
 -(NSString *)extractContent {
     return [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];
 }

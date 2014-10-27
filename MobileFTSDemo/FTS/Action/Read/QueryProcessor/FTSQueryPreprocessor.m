@@ -10,6 +10,9 @@
 
 @implementation FTSQueryPreprocessor
 
+
+#pragma mark - public
+
 -(NSString *)processQuery:(NSString *)query {
     NSArray* tokens = [query componentsSeparatedByString:@" "];
     NSMutableString* modifiedQuery = [[NSMutableString alloc] init];

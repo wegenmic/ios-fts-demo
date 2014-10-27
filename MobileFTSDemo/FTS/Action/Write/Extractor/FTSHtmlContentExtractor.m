@@ -11,12 +11,23 @@
 
 @implementation FTSHtmlContentExtractor
 
+
+#pragma mark - public
+
 -(NSString *)extractContent {
     TFHpple *hpple = [[TFHpple alloc] initWithHTMLData:self.data];
     NSArray *elements = [hpple searchWithXPathQuery:@"//text()"];
     
     return [self extractHtmlFromElements:elements];
 }
+
+-(NSString *)extractMetadata {
+    // TODO should add Tag names as metadata?
+    return [[NSString alloc] initWithFormat:@"filetype_%@", [self.documentPath pathExtension]];
+}
+
+
+#pragma mark - private
 
 -(NSString *)extractHtmlFromElements:(NSArray *)elements {
     NSMutableString* content = [[NSMutableString alloc] init];
@@ -30,10 +41,5 @@
         [content appendString:[element content]];
     }
     return content;
-}
-
--(NSString *)extractMetadata {
-    // TODO should add Tag names as metadata?
-    return [[NSString alloc] initWithFormat:@"filetype_%@", [self.documentPath pathExtension]];
 }
 @end

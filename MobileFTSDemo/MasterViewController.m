@@ -19,6 +19,9 @@
 
 @implementation MasterViewController
 
+
+#pragma mark - UIViewController
+
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -55,6 +58,36 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            Document *doc = _objects[indexPath.row];
+            DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+            [controller setDoc:doc];
+            controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+            controller.navigationItem.leftItemsSupplementBackButton = YES;
+        } else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            Document *doc = _objects[indexPath.row];
+            [[segue destinationViewController] setDoc:doc];
+        }
+    }
+}
+
+
+#pragma mark - actions
+
+- (IBAction)addDocument:(id)sender
+{
+    [self displayAddDocumentButton];
+    [self addDocument];
+}
+
+
+#pragma mark - private
 
 - (void)displaySearchBar
 {
@@ -104,7 +137,47 @@
     }
 }
 
-#pragma mark - Table View
+- (void)addDocument
+{
+    NSString* documentPath = self.addDocumentTextField.text;
+    NSArray* splitDocumentPath = [self separateComponents:documentPath byLastOccurrence:@"."];
+    NSURL* documentUrl = [[NSBundle mainBundle] URLForResource:splitDocumentPath[0] withExtension:splitDocumentPath[1]];
+    
+    if(documentUrl != nil) {
+        [_indexedDocumentHandler addDocument:documentUrl];
+    } else {
+        [self displayGlobalMessage:[NSString stringWithFormat:@"Document [%@] not found", documentPath] withTitle:@"Could not add Document to Index"];
+    }
+    
+    self.addDocumentTextField.text = @"";
+    [self displaySearchBar];
+}
+
+- (void)displayGlobalMessage:(NSString*)message withTitle:(NSString *)title
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+
+- (NSArray *)separateComponents:(NSString *)input byLastOccurrence:(NSString *)delimiter {
+    NSArray* splitDocumentPath = [input componentsSeparatedByString:delimiter];
+    if (splitDocumentPath.count < 2) {
+        return [[NSArray alloc] initWithObjects:input, @"", nil];
+    }
+    NSMutableString* path = [[NSMutableString alloc] init];
+    for (NSString* splitPart in splitDocumentPath) {
+        if ([splitDocumentPath lastObject] != splitPart) {
+            [path appendFormat:@"%@.",splitPart];
+        } else {
+            [path deleteCharactersInRange:NSMakeRange([path length]-1, 1)];
+        }
+    }
+    NSString* lastElement = [splitDocumentPath lastObject];
+    return [[NSArray alloc] initWithObjects:path, lastElement, nil];
+}
+
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -143,6 +216,9 @@
     }
 }
 
+
+#pragma mark - UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -151,71 +227,8 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            Document *doc = _objects[indexPath.row];
-            DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-            [controller setDoc:doc];
-            controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-            controller.navigationItem.leftItemsSupplementBackButton = YES;
-        } else {
-            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            Document *doc = _objects[indexPath.row];
-            [[segue destinationViewController] setDoc:doc];
-        }
-    }
-}
 
-// Actions
-- (IBAction)addDocument:(id)sender
-{
-    [self displayAddDocumentButton];
-    [self addDocument];
-}
-
-- (void)addDocument
-{
-    NSString* documentPath = self.addDocumentTextField.text;
-    NSArray* splitDocumentPath = [self separateComponents:documentPath byLastOccurrence:@"."];
-    NSURL* documentUrl = [[NSBundle mainBundle] URLForResource:splitDocumentPath[0] withExtension:splitDocumentPath[1]];
-    
-    if(documentUrl != nil) {
-        [_indexedDocumentHandler addDocument:documentUrl];
-    } else {
-        [self displayGlobalMessage:[NSString stringWithFormat:@"Document [%@] not found", documentPath] withTitle:@"Could not add Document to Index"];
-    }
-
-    self.addDocumentTextField.text = @"";
-    [self displaySearchBar];
-}
-
-- (void)displayGlobalMessage:(NSString*)message withTitle:(NSString *)title
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-}
-
-- (NSArray *)separateComponents:(NSString *)input byLastOccurrence:(NSString *)delimiter {
-    NSArray* splitDocumentPath = [input componentsSeparatedByString:delimiter];
-    if (splitDocumentPath.count < 2) {
-        return [[NSArray alloc] initWithObjects:input, @"", nil];
-    }
-    NSMutableString* path = [[NSMutableString alloc] init];
-    for (NSString* splitPart in splitDocumentPath) {
-        if ([splitDocumentPath lastObject] != splitPart) {
-            [path appendFormat:@"%@.",splitPart];
-        } else {
-            [path deleteCharactersInRange:NSMakeRange([path length]-1, 1)];
-        }
-    }
-    NSString* lastElement = [splitDocumentPath lastObject];
-    return [[NSArray alloc] initWithObjects:path, lastElement, nil];
-}
-
-// UISearchBarDelegate
+#pragma mark - UISearchBarDelegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
@@ -228,7 +241,8 @@
     [_indexedDocumentHandler findDocuments:[searchBar text]];
 }
 
-// UITextFieldDelegate
+
+#pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self displayAddDocumentButton];
@@ -236,7 +250,8 @@
     return NO;
 }
 
-// FTSFindDocumentActionDelegate
+
+#pragma mark - FTSFindDocumentActionDelegate
 
 -(void)ftsDocumentAction:(FTSFindDocumentAction *)action didFindDocuments:(NSArray *)documentPaths forSearch:(NSString *)query {
     if (!_objects) {
@@ -251,7 +266,8 @@
     [self.tableView reloadData];
 }
 
-// FTSRemoveDocumentActionDelegate
+
+#pragma mark - FTSRemoveDocumentActionDelegate
 
 -(void)ftsDocumentAction:(FTSRemoveDocumentAction *)action didRemoveDocument:(NSURL *)pathToDocument
 {
@@ -262,7 +278,8 @@
     [self displayGlobalMessage:[NSString stringWithFormat:@"Failed to remove Document [%@]", pathToDocument] withTitle:nil];
 }
 
-// FTSAddDocumentActionDelegate
+
+#pragma mark - FTSAddDocumentActionDelegate
 
 // Add
 -(void)ftsDocumentAction:(FTSAddDocumentAction *)action didAddDocument:(NSURL *)pathToDocument

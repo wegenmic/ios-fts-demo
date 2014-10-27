@@ -30,6 +30,8 @@
     return self;
 }
 
+#pragma mark - database connection
+
 - (void)prepareDatabaseConnection
 {
     NSLog(@"Prepare Database connection");
@@ -64,6 +66,8 @@
         [_writeQueueLock unlock];
     }];
 }
+
+#pragma mark - database helper
 
 - (void)dropDatabase
 {

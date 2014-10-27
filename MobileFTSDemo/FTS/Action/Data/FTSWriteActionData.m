@@ -16,6 +16,9 @@
     return self;
 }
 
+
+#pragma mark - private
+
 - (NSString *)copyToDocumentsDir:(NSURL *)documentPath {
     NSString *documentsFolder = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *newDocumentPath = [documentsFolder stringByAppendingPathComponent:[documentPath lastPathComponent]];

@@ -10,9 +10,6 @@
 
 @interface FTSConstants : NSObject
 
-
-// TODO -> Integrate FTS Configuration in current implementation!
-
 // Database
 extern NSString* const databasePath;
 extern NSString* const tableName;

@@ -20,6 +20,9 @@
     return self;
 }
 
+
+#pragma mark - public abstract
+
 -(NSString *)extractContent {
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];

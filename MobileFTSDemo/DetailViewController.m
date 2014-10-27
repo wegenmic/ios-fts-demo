@@ -14,7 +14,7 @@
 
 @implementation DetailViewController
 
-#pragma mark - Managing the detail item
+#pragma mark - managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -42,6 +42,9 @@
         [_webView loadRequest:request];
     }
 }
+
+
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {

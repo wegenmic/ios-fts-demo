@@ -25,6 +25,9 @@
     return _shareFTSDocumentHandler;
 }
 
+
+#pragma mark - find documents
+
 - (void)findDocuments:(NSString *)searchText {
     FTSReadAction* action = [FTSFindDocumentAction sharedFTSFindDocumentActionWithDelegate:self.delegate];
     [action find:searchText];
@@ -34,6 +37,8 @@
     FTSReadAction* action = [FTSFindDocumentAction sharedFTSFindDocumentActionWithDelegate:self.delegate];
     [action find:searchText withFacets:facets];
 }
+
+#pragma mark - add documents
 
 - (void)addDocument:(NSURL *)documentPath {
     FTSWriteAction* action = [FTSAddDocumentAction sharedFTSAddDocumentActionWithDelegate:self.delegate];
@@ -46,6 +51,8 @@
     }
 }
 
+#pragma mark - remove documents
+
 - (void)removeDocument:(NSURL *)documentPath {
     FTSWriteAction* action = [FTSRemoveDocumentAction sharedFTSRemoveDocumentActionWithDelegate:self.delegate];
     [action write:documentPath];
@@ -56,6 +63,8 @@
         [self removeDocument:documentPath];
     }
 }
+
+#pragma mark - remove documents without delegate callback
 
 - (void)removeAllDocuments {
     // Access the handler directly to access its helper method.

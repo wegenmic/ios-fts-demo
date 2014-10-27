@@ -24,6 +24,9 @@
     return _shareFTSFindDocumentAction;
 }
 
+
+#pragma mark - public
+
 - (void)action:(FTSReadActionData *)input {
     NSMutableArray *foundDocumentPaths = [[NSMutableArray alloc] init];
     FMResultSet *rs;
@@ -49,14 +52,20 @@
     [self notifyDelegate:foundDocumentPaths forSearch:input.query];
 }
 
+
+#pragma mark - private
+
+-(NSString *)actionName {
+    return @"Find";
+}
+
+
+#pragma mark - FTSFindDocumentActionDelegate
+
 - (void)notifyDelegate:(NSArray *)foundDocumentPaths forSearch:(NSString *)query {
     if ([self.delegate respondsToSelector:@selector(ftsDocumentAction:didFindDocuments:forSearch:)]) {
         [self.delegate ftsDocumentAction:self didFindDocuments:foundDocumentPaths forSearch:query];
     }
-}
-
--(NSString *)actionName {
-    return @"Find";
 }
 
 @end

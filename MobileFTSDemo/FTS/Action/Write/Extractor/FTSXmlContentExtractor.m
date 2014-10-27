@@ -10,6 +10,9 @@
 
 @implementation FTSXmlContentExtractor
 
+
+#pragma mark - public
+
 -(NSString *)extractContent {
     self.content = [[NSMutableString alloc] init];
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.data];
@@ -29,6 +32,8 @@
     // TODO should add Tag names as metadata?
     return [[NSString alloc] initWithFormat:@"filetype_%@", [self.documentPath pathExtension]];
 }
+
+#pragma mark - private
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {

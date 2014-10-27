@@ -10,18 +10,22 @@
 
 @implementation FTSConstants
 
-// Database
+
+#pragma mark - database
+
 NSString* const databasePath = @"UserDatabase.sqlite";
 NSString* const tableName = @"nfsdocuments";
 NSString* const tableIdColumn = @"path";
 NSString* const tableMetadataColumn = @"keywords";
 NSString* const tableContentColumn = @"content";
 
-// Document search
+
+#pragma mark - document search
 NSUInteger const delayedSearchQueryLength = 3;
 double_t const searchDelayInSeconds = 1.0;
 
-// Queries
+
+#pragma mark - database queries
 NSString* const createDatabaseQuery = @"CREATE VIRTUAL TABLE IF NOT EXISTS %@ USING fts4(path, keywords, content)";
 NSString* const dropTableDatabaseQuery = @"DROP TABLE %@";
 NSString* const cleanDatabaseQuery = @"DELETE FROM %@";

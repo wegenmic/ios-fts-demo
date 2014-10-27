@@ -11,6 +11,9 @@
 
 @implementation FTSPdfContentExtractor
 
+
+#pragma mark - public
+
 -(NSString *)extractContent {
     NSMutableString* content = [[NSMutableString alloc] init];
     PDFStringParser *parser = [[PDFStringParser alloc] initWithFileAtURL:self.documentPath];

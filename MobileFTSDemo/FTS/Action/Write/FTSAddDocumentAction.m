@@ -23,6 +23,9 @@
     return _shareFTSAddDocumentAction;
 }
 
+
+#pragma mark - public
+
 - (void)action:(FTSWriteActionData *)input {
     BOOL success = NO;
     
@@ -45,6 +48,16 @@
     }
 }
 
+
+#pragma mark - private
+
+-(NSString *)actionName {
+    return @"Add";
+}
+
+
+#pragma mark - FTSAddDocumentActionDelegate
+
 - (void)notifyAddDelegate:(BOOL)success forDocument:(NSURL *)documentPath {
     if (success && [self.delegate respondsToSelector:@selector(ftsDocumentAction:didAddDocument:)]) {
         [self.delegate ftsDocumentAction:self didAddDocument:documentPath];
@@ -63,10 +76,6 @@
     if (!success && [self.delegate respondsToSelector:@selector(ftsDocumentAction:didFailUpdatingDocument:)]) {
         [self.delegate ftsDocumentAction:self didFailUpdatingDocument:documentPath];
     }
-}
-
--(NSString *)actionName {
-    return @"Add";
 }
 
 @end
