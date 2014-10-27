@@ -90,7 +90,7 @@ All SQL Queries and further Configurations can be adapted here if needed.
 
 --------------------------
 
-##<a id="dependencies" name="dependencies"></a>Cocoapods Dependenies
+##<a id="dependencies" name="dependencies"></a>Cocoapods Dependencies
 
 <img src="/documentation/fts_cocoa_dependencies.png?raw=true">
 
@@ -101,11 +101,11 @@ All SQL Queries and further Configurations can be adapted here if needed.
 **How it works**
 
 - **FTSDocumentHandler**
-  Is the entry point for the use of the fulltext search. With the help of the FTSActions (FTSAddDocumentAction, FTSRemoveDocumentAction, FTSFindDocumentAction) it has complete access to all the needed operations on the document index. The delegate that can be passed will be forwarded to the specific actions, so the callback via delegate can be handled properly because all calls are asynchronous.
+  is the entry point for the use of the fulltext search. With the help of the FTSActions (FTSAddDocumentAction, FTSRemoveDocumentAction, FTSFindDocumentAction) it has complete access to all the needed operations on the document index. The delegate that can be passed will be forwarded to the specific actions, so the callback via delegate can be handled properly because all calls are asynchronous.
 - **FTSAddDocumentAction**
-  Adds or updates (if the document is already part of the index) the content of a document to the index. The content (including the metadata like filetype) will be parsed and extracted by the Extractor construct. It will notify the delegate if the operation was completed successfully or not.
+  adds or updates (if the document is already part of the index) the content of a document to the index. The content (including the metadata like filetype) will be parsed and extracted by the Extractor construct. It will notify the delegate if the operation was completed successfully or not.
 - **FTSContentExtractor**
-  Provides the ability to parse documents and extract the content and the metadata. Thanks to its subclasses, the following file formats can successfully processed:
+  provides the ability to parse documents and extract the content and the metadata. Thanks to its subclasses, the following file formats can successfully processed:
     PDF
     XML
     HTML
@@ -113,13 +113,13 @@ All SQL Queries and further Configurations can be adapted here if needed.
     Plaintext
   If a certain file format is unknown, it will be treated as plaintext.
 - **FTSRemoveDocumentAction**
-  Removes an existing document from the index and notifies the delegate if the operation was completed successfully or not.
+  removes an existing document from the index and notifies the delegate if the operation was completed successfully or not.
 - **FTSFindDocumentAction**
-  Takes the search input and generates a database query. All found documents will be returned to the delegate.
+  takes the search input and generates a database query. All found documents will be returned to the delegate.
 - **FTSQueryProcessor**
-  With the FTSQueryProcessor we have the ability to process / enhance the search input before the database query will be generated. The Default behaviour is, that after each word (separated by space) the wildcard character '*' will be added.
+  gives us the ability to process / enhance the search input before the database query will be generated. The Default behaviour is, that after each word (separated by space) the wildcard character '*' will be added.
 - **FTSDatabaseHandler**
-  Provides basic database funtionality such as setting up the db queue and locks.
+  provides basic database funtionality such as setting up the db queue and locks.
 
 **Restrictions**
 
