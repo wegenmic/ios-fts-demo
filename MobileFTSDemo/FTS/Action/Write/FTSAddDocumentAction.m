@@ -46,7 +46,12 @@
         metadata = [self retrieveMetadataFromDocument:input.targetDocumentPath];
     }
     @catch (NSException *exception) {
-        [self notifyAddDelegate:false forDocument:input.originDocumentPath];
+        // inform delegate on error during content retrieval
+        if ([self documentExists:input.filename inDatabase:input.database]) {
+            [self notifyAddDelegate:false forDocument:input.originDocumentPath];
+        } else {
+           [self notifyUpdateDelegate:false forDocument:input.originDocumentPath];
+        }
         return;
     }
     
