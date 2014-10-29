@@ -33,14 +33,22 @@
 
 - (void)action:(FTSWriteActionData *)input {
     BOOL success = NO;
+    NSString *content;
+    NSString *metadata;
     
     if(input.filename == nil) {
         [self notifyAddDelegate:success forDocument:input.originDocumentPath];
         return;
     }
     
-    NSString *content = [self retrieveContentFromDocument:input.targetDocumentPath];
-    NSString *metadata = [self retrieveMetadataFromDocument:input.targetDocumentPath];
+    @try {
+        content = [self retrieveContentFromDocument:input.targetDocumentPath];
+        metadata = [self retrieveMetadataFromDocument:input.targetDocumentPath];
+    }
+    @catch (NSException *exception) {
+        [self notifyAddDelegate:false forDocument:input.originDocumentPath];
+        return;
+    }
     
     if ([self documentExists:input.filename inDatabase:input.database]) {
         // UPDATE - document exists.

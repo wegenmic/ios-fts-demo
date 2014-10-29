@@ -22,33 +22,23 @@
     if(successful) {
         return self.content;
     } else {
-        // TODO add error handling
-        NSLog(@"Could not parse Document [%@]", self.documentPath);
-        return @"";
+        NSLog(@"Could not XML parse Document [%@]", self.documentPath);
+        [NSException raise:NSParseErrorException
+                    format:@"Could not XML parse Document [%@]", self.documentPath];
+        return NULL;
     }
 }
 
 -(NSString *)extractMetadata {
-    // TODO should add Tag names as metadata?
     return [[NSString alloc] initWithFormat:@"filetype_%@", [self.documentPath pathExtension]];
 }
 
-#pragma mark - private
+
+#pragma mark - NSXMLParserDelegate
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
     [self.content appendString:string];
 }
-
-- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-    // TODO handle parse error
-    NSLog(@"parseErrorOccurred: %@", parseError);
-}
-
-- (void)parser:(NSXMLParser *)parser validationErrorOccurred:(NSError *)validationError {
-    // TODO handle validation error
-    NSLog(@"validationErrorOccurred: %@", validationError);
-}
-
 
 @end

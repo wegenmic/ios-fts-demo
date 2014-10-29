@@ -25,7 +25,6 @@
 }
 
 -(NSString *)extractMetadata {
-    // TODO what metadata to add?
     return [[NSString alloc] initWithFormat:@"filetype_%@", [self.documentPath pathExtension]];
 }
 

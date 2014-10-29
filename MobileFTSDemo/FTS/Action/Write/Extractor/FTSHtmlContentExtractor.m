@@ -22,7 +22,6 @@
 }
 
 -(NSString *)extractMetadata {
-    // TODO should add Tag names as metadata?
     return [[NSString alloc] initWithFormat:@"filetype_%@", [self.documentPath pathExtension]];
 }
 
