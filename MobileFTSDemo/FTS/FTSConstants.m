@@ -22,7 +22,7 @@ NSString* const TABLE_CONTENT_COLUMN = @"content";
 
 #pragma mark - document search
 
-NSUInteger const DELAYED_SEARCH_QUERY_LENGTH = 3;
+NSUInteger const DELAYED_SEARCH_QUERY_LENGTH = 3; // x -> delayed search for queries that have x or less characters
 double_t const SEARCH_DELAY_IN_SECONDS = 1.0;
 
 

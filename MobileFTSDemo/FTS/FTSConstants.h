@@ -22,7 +22,7 @@ extern NSString* const TABLE_CONTENT_COLUMN;
 
 #pragma mark - document search
 
-extern NSUInteger const DELAYED_SEARCH_QUERY_LENGTH; // x -> delayed search for queries that have less than x characters
+extern NSUInteger const DELAYED_SEARCH_QUERY_LENGTH;
 extern double_t const SEARCH_DELAY_IN_SECONDS;
 
 
