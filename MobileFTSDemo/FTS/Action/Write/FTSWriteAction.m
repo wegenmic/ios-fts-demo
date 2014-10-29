@@ -7,11 +7,6 @@
 //
 
 #import "FTSWriteAction.h"
-#import "FTSDefaultContentExtractor.h"
-#import "FTSXmlContentExtractor.h"
-#import "FTSHtmlContentExtractor.h"
-#import "FTSPdfContentExtractor.h"
-#import "FTSJsonContentExtractor.h"
 #import "FTSConstants.h"
 
 @implementation FTSWriteAction
@@ -54,51 +49,6 @@
     BOOL exists = [rs next];
     [rs close];
     return exists;
-}
-
-
-#pragma mark - content retrieval
-
-- (NSString *)retrieveContentFromDocument:(NSURL *)documentPath {
-    
-    FTSContentExtractor *extractor = [self retrieveContentExtractorFromDocumentPath:documentPath];
-    NSString *content = [extractor extractContent];
-    
-    NSLog(@"Extracted Content from Document [%@]: [%@]", documentPath, content);
-    return content;
-}
-
-- (NSString *)retrieveMetadataFromDocument:(NSURL *)documentPath {
-    
-    FTSContentExtractor *extractor = [self retrieveContentExtractorFromDocumentPath:documentPath];
-    NSString *metadata = [extractor extractMetadata];
-    
-    NSLog(@"Extracted Metadata from Document [%@]: [%@]", documentPath, metadata);
-    return metadata;
-}
-
-- (FTSContentExtractor *)retrieveContentExtractorFromDocumentPath:(NSURL *)documentPath {
-    NSString *pathExtension = [[documentPath absoluteURL] pathExtension];
-    
-    if ([pathExtension isEqualToString:@"xml"]) {
-        return [[FTSXmlContentExtractor alloc] initWithDocumentPath:documentPath];
-    }
-    else if ([pathExtension isEqualToString:@"xhtml"]) {
-        return [[FTSXmlContentExtractor alloc] initWithDocumentPath:documentPath];
-    }
-    else if ([pathExtension isEqualToString:@"html"]) {
-        return [[FTSHtmlContentExtractor alloc] initWithDocumentPath:documentPath];
-    }
-    else if ([pathExtension isEqualToString:@"json"]) {
-        return [[FTSJsonContentExtractor alloc] initWithDocumentPath:documentPath];
-    }
-    else if ([pathExtension isEqualToString:@"pdf"]) {
-        return [[FTSPdfContentExtractor alloc] initWithDocumentPath:documentPath];
-    }
-    else
-    {
-        return [[FTSDefaultContentExtractor alloc] initWithDocumentPath:documentPath];
-    }
 }
 
 @end
