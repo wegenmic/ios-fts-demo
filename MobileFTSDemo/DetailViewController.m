@@ -31,7 +31,7 @@
         self.detailDescriptionLabel.text = self.doc.title;
         
         if (!_webView) {
-            _webView = [[UIWebView alloc] init];
+            _webView = [UIWebView new];
             [self.view addSubview:_webView];
             [_webView setFrame:self.view.frame];
             [_webView setBounds:self.view.bounds];
@@ -62,6 +62,7 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
     [self configureView];
 }
 
